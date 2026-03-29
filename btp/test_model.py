@@ -114,7 +114,7 @@ def test_model(model_path, network, num_seconds, use_gui):
     print(f"  Max Waiting Time     : {np.max(waiting_times):.2f} s")
     print(f"  Avg Queue Length     : {np.mean(queue_lengths):.2f} vehicles")
     print(f"  Max Queue Length     : {np.max(queue_lengths):.0f} vehicles")
-    print(f"  Avg Speed            : {np.mean(speeds):.4f} (normalised 0-1)")
+    print(f"  Avg Speed            : {np.mean(speeds):.4f} m/s")
     print("="*60)
     print(f"  ✅ CSV saved to: {out_csv}_conn0_ep1.csv\n")
 
