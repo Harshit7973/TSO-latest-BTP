@@ -35,15 +35,15 @@ $$Q^{\pi}(s,a) = \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma \sum_{a'} \pi(a'|s') Q^
 
 #### Optimal Value (Bellman Optimality)
 
-$$V^*(s) = \max_a \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma V^*(s')]$$
+$$V^{*}(s) = \max_a \sum_{s'} P(s'\mid s,a) [R(s,a,s') + \gamma V^{*}(s')]$$
 
-$$Q^*(s,a) = \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma \max_{a'} Q^*(s',a')]$$
+$$Q^{*}(s,a) = \sum_{s'} P(s'\mid s,a) [R(s,a,s') + \gamma \max_{a'} Q^{*}(s',a')]$$
 
 #### Fixed-Point Form
 
-$$V^* = T^*V^* \quad \text{where} \quad (T^*V)(s) = \max_a \mathbb{E}_{s' \sim P(\cdot|s,a)}[R(s,a,s') + \gamma V(s')]$$
+$$V^{*} = T^{*}V^{*} \quad \text{where} \quad (T^{*}V)(s) = \max_a \mathbb{E}_{s' \sim P(\cdot\mid s,a)}[R(s,a,s') + \gamma V(s')]$$
 
-The operator $T^*$ is a contraction under L$\infty$ norm (Banach fixed-point theorem guarantees unique solution).
+The operator $T^{*}$ is a contraction under $L_{\infty}$ norm (Banach fixed-point theorem guarantees unique solution).
 
 ---
 
@@ -66,7 +66,7 @@ $$\pi(a|s) = \begin{cases}
 $$\pi_{\theta}(a|s) = \text{softmax}(Q_{\theta}(s, \cdot)) \quad \text{(implicit)}$$
 
 In practice, we use:
-$$a^* = \arg\max_a Q_{\theta}(s,a) \quad \text{(argmax, not softmax)}$$
+$$a^{*} = \arg\max_a Q_{\theta}(s,a) \quad \text{(argmax, not softmax)}$$
 
 ---
 
@@ -282,15 +282,15 @@ $$\text{Receptive Field} = 1 + 3(3-1) = 7$$
 
 ### 6.1 Contraction Mapping Property
 
-The Bellman operator $T^*$ is a $\gamma$-contraction in sup-norm:
+The Bellman operator $T^{*}$ is a $\gamma$-contraction in sup-norm:
 
-$$\|T^* V_1 - T^* V_2\|_\infty \leq \gamma \|V_1 - V_2\|_\infty$$
+$$\lVert T^{*} V_1 - T^{*} V_2 \rVert_{\infty} \leq \gamma \lVert V_1 - V_2 \rVert_{\infty}$$
 
 **Consequence**: Value iteration converges exponentially:
-$$\|V^{(n)} - V^*\|_\infty \leq \gamma^n \|V^{(0)} - V^*\|_\infty$$
+$$\lVert V^{(n)} - V^{*} \rVert_{\infty} \leq \gamma^n \lVert V^{(0)} - V^{*} \rVert_{\infty}$$
 
 At $\gamma = 0.75$:
-$$\|V^{(n)} - V^*\|_\infty \leq 0.75^n \|V^{(0)} - V^*\|_\infty$$
+$$\lVert V^{(n)} - V^{*} \rVert_{\infty} \leq 0.75^n \lVert V^{(0)} - V^{*} \rVert_{\infty}$$
 
 One iteration: Error $\times 0.75$ (25% reduction per iteration)
 
@@ -299,13 +299,13 @@ One iteration: Error $\times 0.75$ (25% reduction per iteration)
 When using neural network $Q_\theta$ instead of tabular $Q$:
 
 **True Bellman Operator**:
-$$T^* Q(s,a) = \mathbb{E}[R + \gamma \max_{a'} Q(s', a')]$$
+$$T^{*} Q(s,a) = \mathbb{E}[R + \gamma \max_{a'} Q(s', a')]$$
 
 **Approximated Operator**:
 $$\tilde{T}^* Q_\theta(s,a) = \mathbb{E}[R + \gamma \max_{a'} Q_\theta(s', a')]$$
 
 **Total Error**:
-$$\|Q_\theta - Q^*\|_\infty \leq \|Q_\theta - T^* Q_\theta\|_\infty / (1-\gamma) + \epsilon_{\text{approx}}$$
+$$\lVert Q_\theta - Q^{*} \rVert_{\infty} \leq \lVert Q_\theta - T^{*} Q_\theta \rVert_{\infty} / (1-\gamma) + \epsilon_{\text{approx}}$$
 
 where $\epsilon_{\text{approx}}$ is function approximation error.
 
@@ -361,7 +361,7 @@ where $A_t$ = arrivals in step $t$, $S_t$ = departures in step $t$.
 
 #### Steady-State Queue (Fixed-Time Control)
 If arrivals balanced with service:
-$$Q^* \approx \frac{\lambda}{4 \mu}$$
+$$Q^{*} \approx \frac{\lambda}{4 \mu}$$
 
 (4 directions; each gets 1/4 of cycle time at rate $\mu$)
 
@@ -522,7 +522,7 @@ v ← β₂ v + (1-β₂) g²
 $$\min_{a_1, a_2, \ldots} \sum_{t=0}^{T} W_t \quad \text{where } W_t = \sum_i w_i(t)$$
 
 **Greedy Surrogate** (myopic):
-$$a_t^* = \arg\min_{a} W_{t+\Delta t}(a)$$
+$$a_t^{*} = \arg\min_{a} W_{t+\Delta t}(a)$$
 
 **Equivalent Reward** (max this instead of minimizing $W$):
 $$R_t = W_t - W_{t+\Delta t}$$

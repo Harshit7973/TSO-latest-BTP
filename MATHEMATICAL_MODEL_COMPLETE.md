@@ -148,7 +148,7 @@ Each action selects a traffic light phase to activate for the next decision epoc
 
 $$a_t \in \{0, 1, 2, 3\}$$
 
-$$\pi(a | s) = P(a_t = a | S_t = s)$$
+$$\pi(a \mid s) = P(a_t = a \mid S_t = s)$$
 
 where $\pi$ is the **policy** (learned by the neural network).
 
@@ -326,21 +326,21 @@ $$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(
 
 ### 2.2 Policy and Value Functions
 
-#### **Optimal Value Function: $V^*(s)$**
+#### **Optimal Value Function: $V^{*}(s)$**
 
-$$V^*(s) = \max_a \sum_{s'} P(s' | s, a) [R(s, a, s') + \gamma V^*(s')]$$
+$$V^{*}(s) = \max_a \sum_{s'} P(s' \mid s, a) [R(s, a, s') + \gamma V^{*}(s')]$$
 
 **Interpretation**: Expected cumulative discounted future waiting time reduction from state $s$.
 
-#### **Optimal Q-Function: $Q^*(s, a)$**
+#### **Optimal Q-Function: $Q^{*}(s, a)$**
 
-$$Q^*(s, a) = \sum_{s'} P(s' | s, a) [R(s, a, s') + \gamma \max_{a'} Q^*(s', a')]$$
+$$Q^{*}(s, a) = \sum_{s'} P(s' \mid s, a) [R(s, a, s') + \gamma \max_{a'} Q^{*}(s', a')]$$
 
 **Interpretation**: Expected cumulative discounted reward for taking action $a$ in state $s$.
 
-#### **Learned Policy: $\pi(a | s)$**
+#### **Learned Policy: $\pi(a \mid s)$**
 
-$$\pi(a | s) = \begin{cases}
+$$\pi(a \mid s) = \begin{cases}
 \arg\max_a Q(s, a) & \text{with probability } (1 - \epsilon) \text{ (exploit)} \\
 \text{random } a & \text{with probability } \epsilon \text{ (explore)}
 \end{cases}$$
@@ -871,11 +871,11 @@ def collect_waiting_times():
 
 #### Bellman Optimality Equation
 
-$$V^*(s) = \max_a \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma V^*(s') \right]$$
+$$V^{*}(s) = \max_a \mathbb{E}_{s' \sim P(\cdot\mid s,a)} \left[ R(s,a,s') + \gamma V^{*}(s') \right]$$
 
 Or equivalently, for Q-function:
 
-$$Q^*(s, a) = \mathbb{E}_{s' \sim P(\cdot|s,a)} \left[ R(s,a,s') + \gamma \max_{a'} Q^*(s', a') \right]$$
+$$Q^{*}(s, a) = \mathbb{E}_{s' \sim P(\cdot\mid s,a)} \left[ R(s,a,s') + \gamma \max_{a'} Q^{*}(s', a') \right]$$
 
 ### 7.2 Temporal Difference (TD) Learning
 
@@ -902,12 +902,12 @@ Under assumptions:
 2. Exploration (ε-greedy with $\sum \epsilon_t = \infty$, $\sum \epsilon_t^2 < \infty$)
 3. Bounded rewards
 
-**Convergence Result**: Q-learning converges to $Q^*$ with probability 1.
+**Convergence Result**: Q-learning converges to $Q^{*}$ with probability 1.
 
 #### In Practice (Finite Time)
 
 After $T$ episodes and $(s, a, r, s')$ transitions:
-- $|Q(s,a) - Q^*(s,a)| \leq O(1/\sqrt{T})$ (convergence rate)
+- $|Q(s,a) - Q^{*}(s,a)| \leq O(1/\sqrt{T})$ (convergence rate)
 - Deep networks with approximation: Convergence no guaranteed; empirically observed
 
 ---
@@ -970,7 +970,7 @@ Should decrease during training
 | **Deterministic SUMO Physics** | Given arrivals are deterministic movements | High fidelity |
 | **Independence of Vehicles** | No special vehicle classes; all same dynamics | Approximation |
 | **Complete Observability** | Agent sees all vehicle positions | Valid; TraCI provides full info |
-| **Markovian Property** | $P(s' \| s, a)$ independent of history | Approximately valid; some history in queues |
+| **Markovian Property** | $P(s' \mid s, a)$ independent of history | Approximately valid; some history in queues |
 | **Discrete Time Steps** | Actions every 10 seconds | Practical discretization |
 | **No Communication** | Vehicles don't coordinate | Realistic; vehicles self-interested |
 | **Stationarity in Learning** | Reward function doesn't change | Valid during training |
@@ -1049,9 +1049,9 @@ The loss surface $\mathcal{L}(\theta)$ is:
 Deep networks have **vanishing or exploding gradients** mitigated by:
 1. **ReLU activations**: $\text{ReLU}'(x) = 1$ if $x > 0$, preventing vanishing
 2. **Batch normalization**: Not used here; mitigated by gradient clipping
-3. **Gradient clipping** (Project 2): $\|\nabla \mathcal{L}\| \leq 5$ prevents explosions
+3. **Gradient clipping** (Project 2): $\lVert\nabla \mathcal{L}\rVert \leq 5$ prevents explosions
 
-$$\nabla' = \begin{cases} \nabla & \text{if} \|\nabla\| \leq 5 \\ 5 \cdot \frac{\nabla}{\|\nabla\|} & \text{otherwise} \end{cases}$$
+$$\nabla' = \begin{cases} \nabla & \text{if} \lVert\nabla\rVert \leq 5 \\ 5 \cdot \frac{\nabla}{\lVert\nabla\rVert} & \text{otherwise} \end{cases}$$
 
 ### 11.3 Exploration-Exploitation Tradeoff
 
@@ -1153,9 +1153,9 @@ Late: Low (more) negative rewards (learned policy)
 | $Q(s,a)$ | Action-value function | $\mathbb{R}$ |
 | $V(s)$ | State-value function | $\mathbb{R}$ |
 | $\theta$ | Neural network weights | $\mathbb{R}^{|\theta|}$ |
-| $\theta^-$ | Target network weights | $\mathbb{R}^{\|\theta\|}$ |
-| $P(s' \| s,a)$ | Transition probability | $[0,1]$ |
-| $\pi(a \| s)$ | Policy (probability of action) | $[0,1]$ |
+| $\theta^-$ | Target network weights | $\mathbb{R}^{\lVert\theta\rVert}$ |
+| $P(s' \mid s,a)$ | Transition probability | $[0,1]$ |
+| $\pi(a \mid s)$ | Policy (probability of action) | $[0,1]$ |
 | $\mathcal{D}$ | Replay buffer/ dataset | $\mathcal{D} \subseteq (S \times A \times \mathbb{R} \times S)^{|C|}$ |
 | $N_s$ | State dimensionality | 80 |
 | $N_a$ | Number of actions | 4 |
@@ -1189,8 +1189,8 @@ Minimizing this over actions → minimize total waiting.
 
 ### 15.2 Optimal Policy Derivation
 
-Given $Q^*(s, a)$, optimal policy is:
-$$\pi^*(a | s) = \begin{cases} 1 & \text{if } a = \arg\max_{a'} Q^*(s, a') \\ 0 & \text{otherwise} \end{cases}$$
+Given $Q^{*}(s, a)$, optimal policy is:
+$$\pi^{*}(a \mid s) = \begin{cases} 1 & \text{if } a = \arg\max_{a'} Q^{*}(s, a') \\ 0 & \text{otherwise} \end{cases}$$
 
 (deterministic; or ε-soft for exploration)
 
@@ -1238,8 +1238,8 @@ Lower $\mathcal{L}_{\text{MSE}}$ → Better approximation of Bellman equation �
 
 | Aspect | Formula/Value | Notes |
 |--------|---|---|
-| **State Dimension** | $\|S\| = 80$ (binary) or $2304$ (CNN) | Discretized, fully observable |
-| **Action Space** | $\|A\| = 4$ | Discrete: NS-G, NS-L, EW-G, EW-L |
+| **State Dimension** | $\lVert S\rVert = 80$ (binary) or $2304$ (CNN) | Discretized, fully observable |
+| **Action Space** | $\lVert A\rVert = 4$ | Discrete: NS-G, NS-L, EW-G, EW-L |
 | **Reward Function** | $R_t = W_{t-1} - W_t$ | Wait reduction; dense |
 | **Discount Factor** | $\gamma \in \{0.75, 0.95, 0.99\}$ | Project-dependent |
 | **Episode Length** | $T = 5400$ s | 1.5 hours simulated |
