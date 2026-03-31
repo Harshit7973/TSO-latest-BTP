@@ -54,7 +54,7 @@ Where:
 Default observation in this repo:
 
 $$
-s_t = [\text{phase\_one\_hot},\ \text{min\_green},\ \rho_1,\ldots,\rho_m,\ q_1,\ldots,q_m]
+s_t = [\phi_1,\ldots,\phi_{n_p},\ m_t,\ \rho_1,\ldots,\rho_m,\ q_1,\ldots,q_m]
 $$
 
 From `sumo_rl/environment/observations.py`:
@@ -67,7 +67,7 @@ From `sumo_rl/environment/observations.py`:
 Observation dimension:
 
 $$
-|s_t| = n_{\text{green\_phases}} + 1 + 2m
+|s_t| = n_p + 1 + 2m
 $$
 
 where $m$ is the number of controlled incoming lanes.
@@ -77,7 +77,7 @@ where $m$ is the number of controlled incoming lanes.
 Action space is discrete with size equal to number of green phases:
 
 $$
-a_t \in \{0,1,\ldots,n_{\text{green\_phases}}-1\}
+a_t \in \{0,1,\ldots,n_p-1\}
 $$
 
 From `TrafficSignal.set_next_phase(...)`:
@@ -105,11 +105,11 @@ SUMO determines vehicle movement, lane interactions, and queue evolution, while 
 In `sumo_rl/environment/traffic_signal.py`, default reward is differential waiting-time:
 
 $$
-\text{ts\_wait}_t = \frac{1}{100}\sum_{\ell \in \text{incoming lanes}} W_{\ell}(t)
+w_t^{(ts)} = \frac{1}{100}\sum_{\ell \in L_{in}} W_{\ell}(t)
 $$
 
 $$
-r_t = \text{ts\_wait}_{t-1} - \text{ts\_wait}_t
+r_t = w_{t-1}^{(ts)} - w_t^{(ts)}
 $$
 
 Interpretation:

@@ -51,11 +51,11 @@ $$
 Repository default (`diff-waiting-time`):
 
 $$
-\text{ts\_wait}_t=\frac{1}{100}\sum_{\ell}W_{\ell}(t)
+w_t^{(ts)}=\frac{1}{100}\sum_{\ell \in L_{in}}W_{\ell}(t)
 $$
 
 $$
-r_t=\text{ts\_wait}_{t-1}-\text{ts\_wait}_t
+r_t=w_{t-1}^{(ts)}-w_t^{(ts)}
 $$
 
 Interpretation:
