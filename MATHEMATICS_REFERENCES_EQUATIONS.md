@@ -110,35 +110,33 @@ $$\theta_{t+1} = \theta_t - \alpha v_t$$
 
 (Not used in projects; standard SGD with Adam below.)
 
-#### Adam Optimizer (Used in Projects 1 & 2)
+#### Adam Optimizer (Standard in DQN)
 
 **Pseudocode**:
 ```
 Initialize m_0 = 0, v_0 = 0, t = 0
 for each gradient g_t:
     t ← t + 1
-    m_t ← β₁ m_{t-1} + (1-β₁) g_t
-    v_t ← β₂ v_{t-1} + (1-β₂) g_t²
-    m̂_t ← m_t / (1 - β₁^t)          // bias correction
-    v̂_t ← v_t / (1 - β₂^t)          // bias correction
+    m_t ← β1 m_{t-1} + (1-β1) g_t
+    v_t ← β2 v_{t-1} + (1-β2) g_t²
+    m̂_t ← m_t / (1 - β1^t)          // bias correction
+    v̂_t ← v_t / (1 - β2^t)          // bias correction
     θ_{t+1} ← θ_t - α m̂_t / (√v̂_t + ε)
 ```
 
 **Default hyperparameters**: $\beta_1 = 0.9$, $\beta_2 = 0.999$, $\epsilon = 10^{-8}$
 
-**Why Adam?**: Adaptive learning rates per parameter; works well with sparse gradients.
+**Why Adam?**: Adaptive learning rates per parameter; works well with deep networks and noisy gradients.
 
-### 2.3 Multi-Step Returns (TD(λ))
+### 2.3 TD Target Networks
 
-While this project uses TD(0) (1-step), the general form is:
+To stabilize learning, a separate target network $Q(\cdot; \theta^-)$ is used:
 
-$$G_t^{(\lambda)} = (1-\lambda) \sum_{n=1}^{\infty} \lambda^{n-1} G_t^{(n)}$$
+$$\hat{y}_t = R_t + \gamma \max_{a'} Q(S_{t+1}, a'; \theta^-)$$
 
-where $G_t^{(n)} = R_t + \gamma R_{t+1} + \cdots + \gamma^{n-1} R_{t+n-1} + \gamma^n V(S_{t+n})$
+where $\theta^-$ is updated periodically (soft update) with parameter $\tau = 0.001$:
 
-For $\lambda = 0$: $G_t^{(0)} = G_t^{(1)} = R_t + \gamma V(S_{t+1})$ (TD(0))
-
-For $\lambda = 1$: $G_t^{(1)} = R_t + \gamma R_{t+1} + \cdots$ (Monte Carlo)
+$$\theta^- \leftarrow \tau \theta + (1-\tau) \theta^-$$
 
 ---
 
@@ -159,7 +157,7 @@ $$w_i = (1 / (N \cdot p_i))^{\beta}$$
 
 $$\mathcal{L}(\theta) = \mathbb{E}_{i \sim p} [w_i \delta_i^2]$$
 
-(Not used in Projects 1,2; uniform sampling employed.)
+(Uniform sampling employed.)
 
 ### 3.2 Off-Policy Correction
 
@@ -255,26 +253,14 @@ $$I(S_{\mathrm{full}}; S_{\mathrm{binary}}) < I(S_{\mathrm{full}}, S_{\mathrm{fu
 - Multiple vehicles in same cell provide diminishing returns (majority matters)
 - Empirically: Binary representation achieves ~85-90% of theoretical optimum
 
-### 5.3 CNN Feature Extraction (Project 2)
+### 5.3 State Representation Choice
 
-#### Convolutional Layer Operation
-$$h^{(l+1)}[i,j,k] = \sigma\left(\sum_{m=1}^{C_l} \sum_{u,v} W^{(l)}[k, m, u, v] \cdot h^{(l)}[i+u, j+v, m] + b^{(l)}[k]\right)$$
+TSO-latest-BTP uses composite observations from sumo_rl:
+- One-hot phase encoding
+- Normalized lane densities
+- Normalized queue lengths
 
-where:
-- $h^{(l)}[i,j,m]$: Activation at position $(i,j)$, channel $m$, layer $l$
-- $W^{(l)}[k, m, u, v]$: Weight from input channel $m$, filter $k$, position offset $(u,v)$
-- $\sigma$: Activation (ReLU in this project)
-- $b^{(l)}[k]$: Bias for filter $k$
-
-#### Receptive Field Growth
-After $L$ convolutional layers with kernel size $K$:
-
-$$\text{Receptive Field} = 1 + L(K-1)$$
-
-Project 2: $L=3$, $K=3$
-$$\text{Receptive Field} = 1 + 3(3-1) = 7$$
-
-(Each output neuron "sees" 7×7 spatial region.)
+This provides sufficient information for traffic signal control without requiring spatial convolutions.
 
 ---
 
@@ -378,15 +364,13 @@ $$\Theta = \frac{N_{\mathrm{exited}}}{T_{\max}}$$
 
 ## SECTION 8: NETWORK WEIGHT INITIALIZATION
 
-### 8.1 Kaiming Initialization (He Initialization)
+### 8.1 Xavier/Glorot Initialization
 
-Used in Project 2 for CNN:
+Standard initialization for dense layers:
 
-$$W^{(l)} \sim \mathcal{N}(0, \sigma^2) \quad \text{where} \quad \sigma^2 = \frac{2}{n_{\mathrm{in}}}$$
+$$W^{(l)} \sim \mathcal{U}\left(-\sqrt{\frac{6}{n_{in} + n_{out}}}, \sqrt{\frac{6}{n_{in} + n_{out}}}\right)$$
 
-for ReLU activations.
-
-**Derivation**: Maintains variance of activations across layers; prevents vanishing/exploding gradients.
+Maintains signal variance across layers.
 
 ### 8.2 Bias Initialization
 
