@@ -38,8 +38,8 @@ NETWORKS = {
         "route_file": "sumo_rl/nets/2way-single-intersection/single-intersection-vhvh.rou.xml",
     },
     "4x4": {
-        "net_file": "sumo_rl/nets/4x4-Lucas/4x4.net.xml",
-        "route_file": "sumo_rl/nets/4x4-Lucas/4x4c1c2c1c2.rou.xml",
+        "net_file": "sumo_rl/nets/4x4-grid/4x4.net.xml",
+        "route_file": "sumo_rl/nets/4x4-grid/4x4c1c2c1c2.rou.xml",
     },
 }
 

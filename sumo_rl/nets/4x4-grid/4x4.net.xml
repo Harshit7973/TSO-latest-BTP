@@ -6,11 +6,11 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="nets/4x4-Lucas/4x4.net.xml"/>
+        <sumo-net-file value="nets/4x4-grid/4x4.net.xml"/>
     </input>
 
     <output>
-        <output-file value="nets/4x4-Lucas/4x4.net.xml"/>
+        <output-file value="nets/4x4-grid/4x4.net.xml"/>
     </output>
 
     <processing>

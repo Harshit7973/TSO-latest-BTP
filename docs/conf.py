@@ -10,8 +10,6 @@ import sumo_rl
 
 
 project = "SUMO-RL"
-copyright = "2019, Lucas N. Alegre"
-author = "Lucas N. Alegre"
 release = sumo_rl.__version__
 
 # -- General configuration ---------------------------------------------------
@@ -40,7 +38,7 @@ napoleon_custom_sections = [("Returns", "params_style")]
 
 html_theme = "furo"
 html_theme_options = {
-    "source_repository": "https://github.com/LucasAlegre/sumo-rl/",
+    "source_repository": "",
     "source_branch": "main",
     "source_directory": "docs/",
 }
