@@ -51,15 +51,7 @@ mdp/reward
 
 ```{toctree}
 :hidden:
-:caption: Citing
-
-examples/citation
-examples/publications
-```
-
-```{toctree}
-:hidden:
 :caption: Development
 
-Github <https://github.com/LucasAlegre/sumo-rl>
+Development notes
 ```
