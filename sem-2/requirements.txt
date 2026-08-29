@@ -1,0 +1,7 @@
+# Install the repository itself first with: pip install -e .
+stable-baselines3[extra]>=2.3,<3.0
+torch>=2.2
+matplotlib>=3.8
+scipy>=1.11
+supersuit>=3.9
+tqdm>=4.66

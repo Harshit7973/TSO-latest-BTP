@@ -1,0 +1,11 @@
+{
+  "purpose": "Detect accidental modification of key Semester 1 inputs after the sem-2 workspace was created.",
+  "algorithm": "sha256",
+  "files": {
+    "btp/models/dqn_2way.zip": "8daefeb9d7ab1d91c40a3c2b692540ffc877ac0683d0352717b35faced82d1ab",
+    "btp/models/qtable_2way.pkl": "d142d6f433d784174bda652da0f27e6886fd845a3698a9bc7bb9fb33b5b9023a",
+    "btp/train_dqn.py": "845391a8196d1d1ec508304897389bac8635dc322cf4504fc9f20ff6e000508c",
+    "btp/train_qlearning.py": "b42342d31d7f48761af645830d3c33c017879e2130846cf4adc79f5b73ee421d",
+    "btp/train_baseline.py": "f4d042fbff595ed06d33af3ea058828cec150c2e93f8b1b2653811745108e076"
+  }
+}

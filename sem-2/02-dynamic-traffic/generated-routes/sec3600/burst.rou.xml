@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+    <route id="route_ns" edges="n_t t_s" />
+    <route id="route_nw" edges="n_t t_w" />
+    <route id="route_ne" edges="n_t t_e" />
+    <route id="route_sn" edges="s_t t_n" />
+    <route id="route_se" edges="s_t t_e" />
+    <route id="route_sw" edges="s_t t_w" />
+    <route id="route_ew" edges="e_t t_w" />
+    <route id="route_en" edges="e_t t_n" />
+    <route id="route_es" edges="e_t t_s" />
+    <route id="route_we" edges="w_t t_e" />
+    <route id="route_wn" edges="w_t t_n" />
+    <route id="route_ws" edges="w_t t_s" />
+    <flow id="burst_1_ns" route="route_ns" begin="0" end="900" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_nw" route="route_nw" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_ne" route="route_ne" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_sn" route="route_sn" begin="0" end="900" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_se" route="route_se" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_sw" route="route_sw" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_ew" route="route_ew" begin="0" end="900" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_en" route="route_en" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_es" route="route_es" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_we" route="route_we" begin="0" end="900" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_wn" route="route_wn" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_1_ws" route="route_ws" begin="0" end="900" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_ns" route="route_ns" begin="900" end="1800" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_nw" route="route_nw" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_ne" route="route_ne" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_sn" route="route_sn" begin="900" end="1800" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_se" route="route_se" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_sw" route="route_sw" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_ew" route="route_ew" begin="900" end="1800" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_en" route="route_en" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_es" route="route_es" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_we" route="route_we" begin="900" end="1800" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_wn" route="route_wn" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_2_ws" route="route_ws" begin="900" end="1800" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_ns" route="route_ns" begin="1800" end="2700" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_nw" route="route_nw" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_ne" route="route_ne" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_sn" route="route_sn" begin="1800" end="2700" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_se" route="route_se" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_sw" route="route_sw" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_ew" route="route_ew" begin="1800" end="2700" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_en" route="route_en" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_es" route="route_es" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_we" route="route_we" begin="1800" end="2700" vehsPerHour="121" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_wn" route="route_wn" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_3_ws" route="route_ws" begin="1800" end="2700" vehsPerHour="49" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_ns" route="route_ns" begin="2700" end="3600" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_nw" route="route_nw" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_ne" route="route_ne" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_sn" route="route_sn" begin="2700" end="3600" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_se" route="route_se" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_sw" route="route_sw" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_ew" route="route_ew" begin="2700" end="3600" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_en" route="route_en" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_es" route="route_es" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_we" route="route_we" begin="2700" end="3600" vehsPerHour="495" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_wn" route="route_wn" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="burst_4_ws" route="route_ws" begin="2700" end="3600" vehsPerHour="202" departSpeed="max" departPos="base" departLane="best" />
+</routes>
