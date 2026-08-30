@@ -1,0 +1,470 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__balanced__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__balanced__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__balanced__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__burst__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__burst__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__burst__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__direction_switch__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__direction_switch__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__direction_switch__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__ew_peak__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__ew_peak__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__ew_peak__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__ns_peak__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__ns_peak__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__ns_peak__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__unseen_mixed__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__unseen_mixed__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\dqn_v1__unseen_mixed__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__balanced__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__balanced__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__balanced__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__burst__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__burst__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__burst__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__direction_switch__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__direction_switch__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__direction_switch__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__ew_peak__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__ew_peak__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__ew_peak__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__ns_peak__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__ns_peak__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__ns_peak__seed203.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__unseen_mixed__seed201.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__unseen_mixed__seed202.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\02-dynamic-traffic\\results\\episodes\\sec3600\\fixed__unseen_mixed__seed203.csv",
+    "passed": true
+  }
+]

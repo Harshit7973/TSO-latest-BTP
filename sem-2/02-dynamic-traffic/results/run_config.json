@@ -1,0 +1,19 @@
+{
+  "force": false,
+  "gui": false,
+  "model": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\btp\\models\\dqn_2way.zip",
+  "scenarios": [
+    "balanced",
+    "ns_peak",
+    "ew_peak",
+    "direction_switch",
+    "burst",
+    "unseen_mixed"
+  ],
+  "seconds": 3600,
+  "seeds": [
+    201,
+    202,
+    203
+  ]
+}
