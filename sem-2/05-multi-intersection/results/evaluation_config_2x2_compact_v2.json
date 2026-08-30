@@ -1,0 +1,30 @@
+{
+  "controllers": {
+    "cooperative": {
+      "best_validation_score": 550.4861111111112,
+      "checkpoint": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\cooperative_2x2_compact_v2_final.pkl",
+      "policy_checkpoint_episode": 10,
+      "q_states": 585,
+      "target_episodes": 30,
+      "training_completed_episode": 30
+    },
+    "independent": {
+      "best_validation_score": 464.5416666666667,
+      "checkpoint": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\independent_2x2_compact_v2_final.pkl",
+      "policy_checkpoint_episode": 5,
+      "q_states": 440,
+      "target_episodes": 30,
+      "training_completed_episode": 30
+    }
+  },
+  "experiment_tag": "compact_v2",
+  "network": "2x2",
+  "seconds": 1800,
+  "seeds": [
+    701,
+    702,
+    703,
+    704,
+    705
+  ]
+}

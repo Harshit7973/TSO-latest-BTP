@@ -1,0 +1,262 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\cooperative__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\cooperative__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\cooperative__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\cooperative__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\cooperative__seed705.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\fixed__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\fixed__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\fixed__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\fixed__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\fixed__seed705.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\independent__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\independent__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\independent__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\independent__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\independent__seed705.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\max_pressure__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\max_pressure__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\max_pressure__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\max_pressure__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\2x2_compact_v2_sec1800\\max_pressure__seed705.csv",
+    "passed": true
+  }
+]
