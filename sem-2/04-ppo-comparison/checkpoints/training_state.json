@@ -1,0 +1,7 @@
+{
+  "completed_timesteps": 60416,
+  "note": "PPO rollout collection can slightly exceed the requested target.",
+  "seconds_per_episode": 1800,
+  "seed": 52,
+  "target_timesteps": 60000
+}

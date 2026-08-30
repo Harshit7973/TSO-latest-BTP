@@ -1,0 +1,19 @@
+{
+  "allow_partial": false,
+  "dqn_model": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\btp\\models\\dqn_2way.zip",
+  "force": false,
+  "ppo_model": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\04-ppo-comparison\\checkpoints\\ppo_latest.zip",
+  "scenarios": [
+    "direction_switch",
+    "burst",
+    "unseen_mixed"
+  ],
+  "seconds": 3600,
+  "seeds": [
+    401,
+    402,
+    403,
+    404,
+    405
+  ]
+}

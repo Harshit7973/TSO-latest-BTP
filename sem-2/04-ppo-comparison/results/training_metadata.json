@@ -1,0 +1,10 @@
+{
+  "cuda_available": true,
+  "python": "3.13.3",
+  "route": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\04-ppo-comparison\\generated-routes\\sec1800\\direction_switch.rou.xml",
+  "stable_baselines3": "2.8.0a4",
+  "target_reached": true,
+  "target_timesteps": 60000,
+  "timesteps": 60416,
+  "torch": "2.6.0+cu124"
+}
