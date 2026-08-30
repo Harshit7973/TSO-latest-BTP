@@ -1,0 +1,19 @@
+{
+  "allow_partial": false,
+  "force": false,
+  "scenarios": [
+    "direction_switch",
+    "burst",
+    "unseen_mixed"
+  ],
+  "seconds": 3600,
+  "seeds": [
+    301,
+    302,
+    303,
+    304,
+    305
+  ],
+  "v1_model": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\btp\\models\\dqn_2way.zip",
+  "v2_model": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\checkpoints\\dqn_v2_latest.zip"
+}

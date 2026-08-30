@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+    <route id="route_ns" edges="n_t t_s" />
+    <route id="route_nw" edges="n_t t_w" />
+    <route id="route_ne" edges="n_t t_e" />
+    <route id="route_sn" edges="s_t t_n" />
+    <route id="route_se" edges="s_t t_e" />
+    <route id="route_sw" edges="s_t t_w" />
+    <route id="route_ew" edges="e_t t_w" />
+    <route id="route_en" edges="e_t t_n" />
+    <route id="route_es" edges="e_t t_s" />
+    <route id="route_we" edges="w_t t_e" />
+    <route id="route_wn" edges="w_t t_n" />
+    <route id="route_ws" edges="w_t t_s" />
+    <flow id="balanced_1_ns" route="route_ns" begin="0" end="1800" vehsPerHour="275" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_nw" route="route_nw" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_ne" route="route_ne" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_sn" route="route_sn" begin="0" end="1800" vehsPerHour="275" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_se" route="route_se" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_sw" route="route_sw" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_ew" route="route_ew" begin="0" end="1800" vehsPerHour="275" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_en" route="route_en" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_es" route="route_es" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_we" route="route_we" begin="0" end="1800" vehsPerHour="275" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_wn" route="route_wn" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+    <flow id="balanced_1_ws" route="route_ws" begin="0" end="1800" vehsPerHour="112" departSpeed="max" departPos="base" departLane="best" />
+</routes>

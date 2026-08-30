@@ -121,3 +121,8 @@ btp/outputs/dqn/*_monitor.monitor.csv
 # Keep everything else in btp/ (models, CSVs, plots)
 !btp/
 !btp/**
+
+# Ignore heavy replay buffers and tensorboard logs in sem-2
+sem-2/**/dqn_v2_replay_buffer.pkl
+sem-2/**/logs/tensorboard/
+

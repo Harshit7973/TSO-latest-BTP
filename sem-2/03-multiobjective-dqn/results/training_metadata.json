@@ -1,0 +1,13 @@
+{
+  "cuda_available": true,
+  "device_requested": "auto",
+  "observation": "phase + min-green + elapsed + density + queue + lane-wait + outgoing-density",
+  "python": "3.13.3",
+  "reward": "delay improvement - queue - CO2 - max-lane-wait - switching",
+  "route": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\direction_switch.rou.xml",
+  "stable_baselines3": "2.8.0a4",
+  "target_reached": true,
+  "target_timesteps": 60000,
+  "timesteps": 60000,
+  "torch": "2.6.0+cu124"
+}

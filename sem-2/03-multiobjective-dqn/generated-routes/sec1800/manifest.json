@@ -1,0 +1,38 @@
+[
+  {
+    "scenario": "balanced",
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\balanced.rou.xml",
+    "expected_insertions": 998.0,
+    "stages": 1
+  },
+  {
+    "scenario": "ns_peak",
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\ns_peak.rou.xml",
+    "expected_insertions": 1068.0,
+    "stages": 1
+  },
+  {
+    "scenario": "ew_peak",
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\ew_peak.rou.xml",
+    "expected_insertions": 1068.0,
+    "stages": 1
+  },
+  {
+    "scenario": "direction_switch",
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\direction_switch.rou.xml",
+    "expected_insertions": 1033.0,
+    "stages": 4
+  },
+  {
+    "scenario": "burst",
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\burst.rou.xml",
+    "expected_insertions": 1118.0,
+    "stages": 4
+  },
+  {
+    "scenario": "unseen_mixed",
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\03-multiobjective-dqn\\generated-routes\\sec1800\\unseen_mixed.rou.xml",
+    "expected_insertions": 1028.0,
+    "stages": 1
+  }
+]

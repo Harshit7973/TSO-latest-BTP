@@ -1,0 +1,19 @@
+{
+  "completed_timesteps": 60000,
+  "previous_state": {
+    "completed_timesteps": 30000,
+    "previous_state": {
+      "completed_timesteps": 20000,
+      "previous_state": {},
+      "seconds_per_episode": 1800,
+      "seed": 42,
+      "target_timesteps": 60000
+    },
+    "seconds_per_episode": 1800,
+    "seed": 42,
+    "target_timesteps": 60000
+  },
+  "seconds_per_episode": 1800,
+  "seed": 42,
+  "target_timesteps": 60000
+}
