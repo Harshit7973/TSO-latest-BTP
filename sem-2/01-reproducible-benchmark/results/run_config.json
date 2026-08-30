@@ -1,0 +1,24 @@
+{
+  "cuda_available": true,
+  "methods": [
+    "fixed",
+    "dqn_v1"
+  ],
+  "model": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\btp\\models\\dqn_2way.zip",
+  "python": "3.13.3",
+  "seconds": 3600,
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "stable_baselines3": "2.8.0a4",
+  "torch": "2.6.0+cu124"
+}

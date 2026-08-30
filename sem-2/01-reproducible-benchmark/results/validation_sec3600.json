@@ -1,0 +1,262 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed101.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed102.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed103.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed104.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed105.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed106.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed107.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed108.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed109.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\dqn_v1__seed110.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed101.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed102.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed103.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed104.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed105.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed106.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed107.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed108.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed109.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\01-reproducible-benchmark\\results\\episodes\\sec3600\\fixed__seed110.csv",
+    "passed": true
+  }
+]
