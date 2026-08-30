@@ -1,0 +1,14 @@
+{
+  "alpha": 0.1,
+  "checkpoint": "C:\\Users\\Harsh\\Downloads\\sumo-rl-main\\sumo-rl-main\\sem-2\\05-multi-intersection\\checkpoints\\cooperative_2x2_final.pkl",
+  "coordination": 0.5,
+  "effective_coordination": 0.5,
+  "episodes": 15,
+  "episodes_per_session": 0,
+  "fresh": true,
+  "gamma": 0.99,
+  "mode": "cooperative",
+  "network": "2x2",
+  "seconds": 1800,
+  "seed": 500
+}
