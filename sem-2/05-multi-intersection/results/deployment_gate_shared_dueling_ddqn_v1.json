@@ -1,0 +1,29 @@
+{
+  "dqn_validation": {
+    "episode": 15.0,
+    "mean_speed": 8.013112935498611,
+    "mean_stopped": 3.9027777777777777,
+    "mean_waiting": 21.641666666666666,
+    "score": 60.669444444444444,
+    "throughput_veh_per_hour": 1300.0
+  },
+  "fixed_validation": {
+    "mean_speed": 6.4091514281825255,
+    "mean_stopped": 10.53888888888889,
+    "mean_waiting": 221.18055555555554,
+    "score": 326.56944444444446,
+    "throughput_veh_per_hour": 1282.0
+  },
+  "max_pressure_validation": {
+    "mean_speed": 8.011153265189984,
+    "mean_stopped": 4.019444444444445,
+    "mean_waiting": 23.394444444444446,
+    "score": 63.58888888888889,
+    "throughput_veh_per_hour": 1286.0
+  },
+  "passed": true,
+  "requirements": {
+    "dqn_score_lte_fraction_of_fixed": 0.85,
+    "dqn_throughput_gte_fraction_of_fixed": 0.97
+  }
+}

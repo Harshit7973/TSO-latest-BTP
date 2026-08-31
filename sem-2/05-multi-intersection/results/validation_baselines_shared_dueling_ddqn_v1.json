@@ -1,0 +1,56 @@
+{
+  "rows": [
+    {
+      "controller": "fixed",
+      "episode": 0,
+      "mean_speed": 6.473045132510517,
+      "mean_stopped": 10.28888888888889,
+      "mean_waiting": 214.73888888888888,
+      "score": 317.6277777777778,
+      "seed": 9601,
+      "teleported": 0.0,
+      "throughput_veh_per_hour": 1300.0
+    },
+    {
+      "controller": "fixed",
+      "episode": 0,
+      "mean_speed": 6.345257723854535,
+      "mean_stopped": 10.78888888888889,
+      "mean_waiting": 227.62222222222223,
+      "score": 335.5111111111111,
+      "seed": 9602,
+      "teleported": 0.0,
+      "throughput_veh_per_hour": 1264.0
+    },
+    {
+      "controller": "max_pressure",
+      "episode": 0,
+      "mean_speed": 8.055466106041047,
+      "mean_stopped": 3.9,
+      "mean_waiting": 22.933333333333334,
+      "score": 61.93333333333334,
+      "seed": 9601,
+      "teleported": 0.0,
+      "throughput_veh_per_hour": 1296.0
+    },
+    {
+      "controller": "max_pressure",
+      "episode": 0,
+      "mean_speed": 7.966840424338921,
+      "mean_stopped": 4.138888888888889,
+      "mean_waiting": 23.855555555555554,
+      "score": 65.24444444444444,
+      "seed": 9602,
+      "teleported": 0.0,
+      "throughput_veh_per_hour": 1276.0
+    }
+  ],
+  "signature": {
+    "pressure_gap": 2.0,
+    "seconds": 900,
+    "seeds": [
+      9601,
+      9602
+    ]
+  }
+}

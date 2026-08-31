@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": {
+    "eligible_mask": true,
+    "minimum_green_lock": true,
+    "masked_argmax": true,
+    "four_agents": true,
+    "state_shape": true,
+    "finite_state": true,
+    "valid_masks": true,
+    "expert_actions": true,
+    "finite_loss": true,
+    "parameters_updated": true,
+    "replay_round_trip": true
+  },
+  "optimizer_metrics": {
+    "loss": 0.323047935962677,
+    "td_loss": 0.11274316906929016,
+    "imitation_loss": 1.4020317792892456,
+    "mean_abs_td_error": 0.4145622253417969
+  }
+}
