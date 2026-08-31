@@ -1,262 +1,321 @@
-# Task 5 — Compact-v2 cooperative multi-intersection control
+# Task 5 — Shared robust DQN for multi-intersection control
 
-## Current context: read this before running or editing
+## Current handoff context
 
-Semester 1 trained only a single-intersection DQN. Task 5 extends the project
-to the unused four-signal 2×2 SUMO network and compares:
+Read this section before running or editing Task 5.
 
-- Fixed-time control.
-- Independent Q-learning: each signal uses its local reward.
-- Cooperative Q-learning: local reward is mixed with a network team reward.
+- Semester 1 demonstrated a DQN on one intersection.
+- The former Task 5 used tabular Q-learning. Its code, checkpoints, plots and
+  generated results were deliberately removed at the project owner's request.
+  They remain recoverable from Git commit `3bcaf06` if historical comparison is
+  ever required.
+- This folder is a fresh implementation. It does not load a Semester 1 model or
+  any former Task 5 checkpoint.
+- No final result exists until the commands below have been run. Do not claim
+  that DQN beats fixed timing merely because the code is present.
+- All generated Task 5 artifacts stay inside this folder. Semester 1 and Tasks
+  1–4 are not modified.
 
-The first Task 5 implementation was trained for 15 episodes and executed
-correctly, but it did **not** generalise to held-out seeds. Preserve those files
-as the `v1` negative result; do not delete or overwrite them.
+## Research question
 
-### Handoff status for the next coding agent
+Can one neural controller, shared by four interacting traffic signals, learn a
+robust policy that beats fixed timing while remaining safe on unfamiliar
+traffic seeds?
 
-- The v1 training/evaluation results currently in this folder are real pulled
-  results and are the evidence used in the diagnosis below.
-- The `compact_v2` code is the corrective implementation. It has passed syntax
-  and isolated policy-logic checks, but it has **not yet been trained in the
-  repository**, so no performance claim should be made before the laptop run.
-- The immediate job is to run the quick pipeline check, then complete both
-  30-episode modes, then run the five held-out seeds in Step 3.
-- Do not modify or delete unversioned v1 outputs. Compact-v2 uses distinct
-  checkpoint, result, episode and plot names specifically to preserve them.
+The final experiment compares five controllers on identical seeds:
 
-### What happened in the first run
+1. Fixed timing.
+2. Pure max-pressure control.
+3. Raw shared DQN, retained as an honest ablation.
+4. Shielded shared DQN, the principal learned controller.
+5. The validation-gated deployed controller.
 
-Five held-out 1,800-second evaluations produced:
+## Why this design is more appropriate than tabular Q-learning
 
-| Controller | Mean waiting measure | Mean stopped | Speed | Throughput/h |
-|---|---:|---:|---:|---:|
-| Fixed | 232.11 | 11.09 | 6.36 | 1396.8 |
-| Cooperative v1 | 2429.86 | 36.19 | 4.62 | 1165.6 |
-| Independent v1 | 3172.09 | 44.94 | 4.50 | 1161.6 |
+The old Q-table treated each discretised state as unrelated to nearby states.
+Multi-intersection state combinations therefore grew rapidly and the agents
+changed one another's learning environment.
 
-Although the final training episodes looked good, exact unseen-state rates were
-19–58% for cooperative control and 55–69% for independent control on most test
-seeds. One independent seed had only 0.3% unseen states and performed extremely
-well. This proves that the main problem was the original state representation,
-not a failed SUMO run.
+This implementation uses **parameter sharing**: all four signals train one
+Dueling Double DQN. Every environment step contributes four transitions to a
+common replay buffer. This provides substantially more experience per neural
+network and transfers traffic patterns between geometrically similar signals.
 
-The old encoding discretised every lane density and queue into ten bins. The
-Cartesian product was too large for a 15-episode Q-table. For an unseen state,
-the old evaluator merely held the current phase, which could starve another
-direction and produce very large queues.
-
-## Compact-v2 correction
-
-The new implementation is deliberately versioned as `compact_v2`. It never
-loads the old checkpoints and writes to new filenames/directories.
-
-### 1. Compact phase-pressure state
-
-For each intersection:
+The method is final-year B.Tech level: it includes deep reinforcement learning,
+multi-agent parameter sharing, interaction features, expert warm-start,
+prioritized replay, Double-DQN targets, a dueling network, safety constraints,
+held-out model selection and paired-seed evaluation. It remains practical on
+an RTX 3050 because the network has only two 128-unit hidden layers.
 
 ```text
-(current phase, minimum-green flag,
- pressure bin for action 0, pressure bin for action 1,
- pressure bin for action 2, pressure bin for action 3)
+four SUMO signals
+       │ local pressure + network congestion context
+       ▼
+one shared Dueling Double DQN
+       │ four Q-values per signal
+       ▼
+near-max-pressure safety mask ──► four executed actions
+       │
+       └── four transitions/step ──► shared prioritized replay
 ```
 
-For each possible phase:
+## Model and state
+
+### Shared Dueling Double DQN
+
+The network estimates four action values using separate value and advantage
+heads:
 
 ```text
-pressure = queued vehicles on served incoming lanes
-           - queued vehicles on served outgoing lanes
+Q(s,a) = V(s) + A(s,a) - mean_a A(s,a)
 ```
 
-Pressure is mapped into five bins: non-positive, 1–2, 3–5, 6–10, and above 10.
-For a four-action signal, the theoretical state count is approximately:
+Double-DQN targets use the online network to select the next action and the
+target network to evaluate it. The loss combines prioritized Huber TD loss with
+a small expert-imitation loss during replay of expert transitions.
+
+### Interaction-aware 26-dimensional state
+
+Each signal receives:
+
+- Current phase: four-value one-hot vector.
+- Minimum-green eligibility flag.
+- Pressure for each of four possible phases.
+- Incoming queue for each phase.
+- Outgoing queue for each phase.
+- Local total queue.
+- Network mean, maximum and standard deviation of intersection queues.
+- Simulation progress.
+- Four-value intersection identity vector.
+
+Continuous traffic features use bounded `tanh` normalisation. The network-level
+features are the explicit interaction component: each decentralized action is
+conditioned on congestion across the four-signal system.
+
+## Robustness mechanisms
+
+### 1. Max-pressure expert warm-start
+
+The first five final-training episodes are controlled by max pressure. These
+transitions fill replay with good behaviour and train the DQN using both TD and
+imitation losses. This choice is evidence-based: the earlier diagnostic run
+showed that max pressure was much stronger than fixed timing.
+
+### 2. Pressure safety shield
+
+After the expert stage, DQN selects actions only from phases whose pressure is
+within two vehicles of the maximum-pressure phase. Before minimum green time is
+satisfied, only the current phase is valid.
+
+The shield does not hide intervention. Every raw DQN decision, executed action,
+expert agreement and shield intervention is counted. `dqn_raw` is also
+evaluated separately so the report can distinguish neural learning from the
+safety layer.
+
+### 3. Prioritized replay and target network
+
+High-error transitions are sampled more frequently, importance weights are
+annealed toward unbiased updates, gradients are clipped and the target network
+is updated every 750 gradient steps.
+
+### 4. Held-out checkpoint selection
+
+Every five episodes, shielded DQN is evaluated without learning on seeds 9601
+and 9602. The selection score is:
 
 ```text
-4 current phases × 2 timing flags × 5^4 pressure combinations = 5,000
+score = mean total waiting measure + 10 × mean stopped vehicles
 ```
 
-This is dramatically smaller and more transferable than ten bins for every
-individual lane feature.
+The lowest-score checkpoint is retained instead of assuming the last episode
+is best. A second `best_qualified` checkpoint tracks the strongest validation
+episode that also passes the deployment requirements, so a qualifying model is
+not discarded merely because another checkpoint has slightly lower congestion
+but unacceptable throughput.
 
-### 2. Queue-based learning reward
+### 5. Deployment gate
 
-The default reward is negative local queue (`reward_fn="queue"`). It is a
-stable immediate signal for short tabular training.
+The selected DQN is deployed only if validation shows:
 
-Independent mode uses:
+- Score at most 85% of fixed timing's score.
+- Throughput at least 97% of fixed timing's throughput.
 
-```text
-effective reward = local reward
-```
+If it fails, `deployment_policy` becomes `max_pressure`. This does not convert a
+failed DQN into a successful DQN claim. It prevents an unsafe or weak learned
+model from being presented as the deployable system. Final evaluation still
+reports raw and shielded DQN separately.
 
-Cooperative mode uses the default 0.5 coordination weight:
+## One-time setup
 
-```text
-team reward      = mean reward across all intersections
-effective reward = 0.5 × local reward + 0.5 × team reward
-```
-
-### 3. Pressure-guided exploration
-
-Exploratory decisions use max-pressure control 70% of the time and a random
-phase 30% of the time. This teaches the Q-table from safer, congestion-aware
-experience while retaining true exploration.
-
-### 4. Safe unseen-state fallback
-
-During evaluation, known compact states use the learned Q-table. A genuinely
-unseen state uses deterministic max-pressure control rather than holding the
-current phase. Every fallback is counted and reported, so this hybrid design
-must be described honestly in the report.
-
-For known states, the learned action is also protected by a conservative
-starvation guard. It is overridden only when another phase has at least five
-more pressure units. Override counts and rates are saved separately; this is a
-safety layer, not an unreported replacement for Q-learning.
-
-The final evaluator also runs pure max-pressure control on exactly the same
-seeds. This is a meaningful adaptive baseline and shows whether learning adds
-value beyond a standard traffic-control heuristic.
-
-### 5. Held-out validation and best-checkpoint selection
-
-Every five training episodes, the current policy is evaluated without learning
-on seeds 9501 and 9502. The score is:
-
-```text
-validation score = mean waiting + 10 × mean stopped vehicles
-```
-
-The lowest-score checkpoint becomes `*_compact_v2_best.pkl`. When training
-reaches the target, the validation-selected policy—not automatically the last
-episode—is copied to `*_compact_v2_final.pkl`.
-
-## Files that define compact-v2
-
-- `multiagent_policy.py`: pressure state, max-pressure fallback and evaluation
-  episode runner.
-- `train_multiagent.py`: resumable Q-learning and held-out checkpoint selection.
-- `evaluate_multiagent.py`: five-seed fixed, max-pressure and learned-policy
-  comparison with fallback/override diagnostics.
-
-An assisting coding agent must preserve the `compact_v2` tag and must not reuse
-`independent_2x2_latest.pkl` or `cooperative_2x2_latest.pkl`; those are the
-failed v1 checkpoints.
-
-## Setup
-
-Run from the repository root in PowerShell after completing the shared setup:
+Run from the repository root in PowerShell:
 
 ```powershell
 $env:SUMO_HOME = "C:\Program Files (x86)\Eclipse\Sumo"
+py -3.11 -m venv .venv-sem2
 .\.venv-sem2\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -e .
+pip install -r sem-2/requirements.txt
 python sem-2/validate_workspace.py
 ```
 
-Training is mainly CPU/SUMO-bound. The RTX 3050 is not needed for tabular
-learning.
+For later sessions, set `SUMO_HOME` and reactivate `.venv-sem2` before running.
 
-## Step 1 — Quick pipeline check
+## Step 1 — Offline self-check
 
-These are non-final runs:
-
-```powershell
-python sem-2/05-multi-intersection/train_multiagent.py --mode independent --episodes 3 --seconds 600 --validation-every 3 --validation-seconds 600 --fresh
-python sem-2/05-multi-intersection/train_multiagent.py --mode cooperative --episodes 3 --seconds 600 --validation-every 3 --validation-seconds 600 --fresh
-python sem-2/05-multi-intersection/evaluate_multiagent.py --seconds 600 --seeds 9901 --allow-partial
-```
-
-Confirm that compact-v2 checkpoints, a training summary, validation history and
-evaluation CSV are created without exceptions.
-
-## Step 2 — Recommended final training
-
-Start a clean 30-episode independent experiment:
+This checks state dimensions, action masking, replay serialization, finite
+losses and a real optimizer update without starting SUMO:
 
 ```powershell
-python sem-2/05-multi-intersection/train_multiagent.py --mode independent --episodes 30 --seconds 1800 --fresh
+python sem-2/05-multi-intersection/self_check.py
 ```
 
-The command runs three episodes, saves, and exits. Continue with the same
-command **without** `--fresh` until it reports episode 30:
+Expected result: `"passed": true`. The machine-readable output is saved to
+`results/self_check.json`.
+
+## Step 2 — Short pipeline run
+
+This verifies SUMO, training, validation, checkpointing and evaluation. These
+are not report results:
 
 ```powershell
-python sem-2/05-multi-intersection/train_multiagent.py --mode independent --episodes 30 --seconds 1800
+python sem-2/05-multi-intersection/train_dqn.py --episodes 6 --episodes-per-session 0 --seconds 600 --expert-episodes 2 --validation-every 3 --validation-seconds 600 --fresh
+python sem-2/05-multi-intersection/evaluate_dqn.py --seconds 600 --seeds 9901
 ```
 
-Repeat the same process for cooperative control:
+Both commands must complete without exceptions. Inspect the generated analysis
+JSON and Markdown file, but do not mix the 600-second output with final results.
+
+## Step 3 — Recommended final training
+
+Start a new 40-episode, 1,800-second experiment:
 
 ```powershell
-python sem-2/05-multi-intersection/train_multiagent.py --mode cooperative --episodes 30 --seconds 1800 --fresh
-python sem-2/05-multi-intersection/train_multiagent.py --mode cooperative --episodes 30 --seconds 1800
+python sem-2/05-multi-intersection/train_dqn.py --episodes 40 --seconds 1800 --fresh
 ```
 
-Rerun each resume command as many times as required. Do not change `--seconds`,
-reward or experiment settings midway. The script rejects incompatible resume
-arguments.
-
-Generous runtime is approximately 2–8 hours per mode, including validation,
-depending on CPU speed and laptop temperature. It is safe to split this over
-ten short sessions per mode.
-
-## Step 3 — Final held-out evaluation
-
-After both modes reach episode 30:
+The default command runs five episodes, saves atomically and exits. Resume using
+the identical command without `--fresh`:
 
 ```powershell
-python sem-2/05-multi-intersection/evaluate_multiagent.py --network 2x2 --seconds 1800 --seeds 701 702 703 704 705
+python sem-2/05-multi-intersection/train_dqn.py --episodes 40 --seconds 1800
 ```
 
-The evaluator loads validation-selected compact-v2 checkpoints. It does not
-touch or reuse the old 601–605 evaluation files.
+Repeat the resume command until the terminal reports training complete and
+prints the deployment policy. Do not change seconds, seed, pressure gap,
+coordination weight or architecture while resuming.
 
-## Compact-v2 outputs
+Expected generous runtime on an RTX 3050 laptop is approximately **4–12 hours
+total**, split over eight sessions. SUMO remains CPU-bound; the GPU accelerates
+only the small neural updates. Actual time depends strongly on CPU and laptop
+temperature.
 
-- `checkpoints/*_compact_v2_latest.pkl`: newest resumable training state.
-- `checkpoints/*_compact_v2_best.pkl`: best held-out validation policy.
-- `checkpoints/*_compact_v2_final.pkl`: selected final policy after episode 30.
-- `results/training-episodes-compact_v2/`: raw training episodes.
-- `results/training_summary_compact_v2.csv`: learning history and Q-state count.
-- `results/validation_history_*_compact_v2.csv`: held-out checkpoint evidence.
-- `results/episodes/2x2_compact_v2_sec1800/`: raw final evaluations.
-- `results/evaluation_2x2_compact_v2_sec1800.csv`: controller summary including
-  pressure-fallback rate.
-- `results/validation_2x2_compact_v2_sec1800.json`: structural validation.
-- `plots/*compact_v2*`: training and final comparison plots.
+Use `--device cpu` only if CUDA causes an installation problem. Do not increase
+episodes merely to obtain a favourable result; held-out validation determines
+the selected checkpoint.
 
-## Acceptance checks
+## Step 4 — Final held-out evaluation
 
-1. Both modes must reach the complete 30-episode target.
-2. The evaluator must load `*_compact_v2_final.pkl` and report five seeds.
-3. All 20 structural validation entries must pass (four methods × five seeds).
-4. Teleported vehicles should be zero or explicitly explained.
-5. For each learned policy, mean pressure-fallback rate should preferably be
-   below 20%. A larger value means state coverage remains insufficient, even
-   if fallback performance is good. Pure max pressure intentionally reports a
-   100% fallback rate because it has no Q-table.
-6. Inspect override rate as a separate safety diagnostic. A high rate means the
-   Q-policy is frequently being corrected by the pressure guard.
-7. Compare every learned policy against fixed timing and pure max pressure on
-   the same 701–705 seeds.
-8. A strong result reduces waiting or stopped vehicles without materially
-   reducing throughput. Do not hide a mode that performs worse.
-9. Cooperative control is only claimed superior if its paired results beat
-   independent control across multiple seeds, not merely one seed.
+After training reaches 40/40:
 
-## If compact-v2 is still weak
+```powershell
+python sem-2/05-multi-intersection/evaluate_dqn.py --seconds 1800 --seeds 701 702 703 704 705
+```
 
-Do not immediately increase to the RESCO 4×4 network. Give the coding agent:
+This runs 25 paired simulations: five controllers × five seeds. A generous
+runtime allowance is **1–4 hours**. Completed raw episodes are retained on
+rerun. The evaluator fingerprints the final checkpoint and refuses to mix raw
+episodes from different models. Use `--force` only when an evaluation was
+invalid or intentionally belongs to a newly trained checkpoint.
 
-- `training_summary_compact_v2.csv`
-- Both validation-history CSVs
-- `evaluation_2x2_compact_v2_sec1800.csv`
-- The structural validation JSON
-- Terminal output
+## Saved outputs
 
-Check fallback rate first. If it remains above 20%, extend the cumulative target
-to 40 episodes using the same resume command. If fallback is low but performance
-is weak, tune the cooperation weight or validation score rather than hiding the
-result.
+### Checkpoints
 
-RESCO 4×4 remains optional and should only be attempted after compact-v2 works
-on 2×2.
+- `checkpoints/shared_dueling_ddqn_v1_latest.pt`: full resumable state including
+  optimizer, prioritized replay and random-number states.
+- `checkpoints/shared_dueling_ddqn_v1_best.pt`: best held-out DQN checkpoint.
+- `checkpoints/shared_dueling_ddqn_v1_best_qualified.pt`: best DQN checkpoint
+  that passes both deployment requirements.
+- `checkpoints/shared_dueling_ddqn_v1_final.pt`: selected checkpoint plus the
+  deployment-gate decision.
+- `checkpoints/shared_dueling_ddqn_v1_episode_*.pt`: model-only milestones every
+  five episodes.
+
+### Training evidence
+
+- `results/training_episodes_shared_dueling_ddqn_v1/`: raw episode CSVs.
+- `results/training_summary_shared_dueling_ddqn_v1.csv`.
+- `results/validation_history_shared_dueling_ddqn_v1.csv`.
+- `results/validation_baselines_shared_dueling_ddqn_v1.json`.
+- `results/deployment_gate_shared_dueling_ddqn_v1.json`.
+- `plots/training_shared_dueling_ddqn_v1.png`.
+- `plots/validation_shared_dueling_ddqn_v1.png`.
+
+### Final evidence
+
+- `results/episodes/shared_dueling_ddqn_v1_sec1800/`: raw paired episodes.
+- `results/evaluation_shared_dueling_ddqn_v1_sec1800.csv`.
+- `results/validation_shared_dueling_ddqn_v1_sec1800.json`.
+- `results/analysis_shared_dueling_ddqn_v1_sec1800.json`.
+- `results/analysis_shared_dueling_ddqn_v1_sec1800.md`.
+- Paired comparison CSVs for fixed and max-pressure baselines.
+- Four final metric plots under `plots/`.
+
+## Correctness and acceptance checks
+
+The evaluator stops rather than silently accepting incomplete data.
+
+Required checks:
+
+1. Training reaches 40/40 and the final checkpoint records the selected
+   validation episode.
+2. All expected raw episodes reach exactly 1,800 simulation seconds.
+3. All 25 structural validation entries pass when raw DQN is included.
+4. Teleported vehicles are zero or explicitly investigated.
+5. The same traffic seed is used for every controller in each paired trial.
+6. Final evaluation seeds must not overlap training or validation seeds; the
+   evaluator checks this automatically.
+7. Shield rate and expert-agreement rate are reported, not hidden.
+8. DQN success requires lower waiting and queues on at least four of five seeds
+   and mean throughput no worse than 3% below fixed timing.
+9. `deployed` success and `dqn_shielded` success are reported separately.
+
+The final automatic analysis contains Boolean success checks. A `true` value is
+evidence for these five held-out seeds, not proof that every possible traffic
+pattern will improve.
+
+## How to interpret possible outcomes
+
+### Shielded DQN passes
+
+The main claim can be that parameter-sharing DQN, expert guidance and safety
+constraints produced a learned multi-intersection controller that beat fixed
+timing on held-out paired seeds. Report raw DQN and max pressure as ablations.
+
+### Shielded DQN fails but deployed control passes
+
+State clearly that the learned candidate did not satisfy deployment criteria
+and the safety process selected max pressure. This remains a useful engineering
+result, but it is not evidence that DQN beat fixed timing.
+
+### Raw DQN fails while shielded DQN passes
+
+Conclude that the neural value function was useful only with domain-informed
+action constraints. Report the shield rate to quantify that dependence.
+
+## Instructions for another coding agent
+
+When diagnosing returned results, provide these files first:
+
+- Training summary and validation history.
+- Deployment-gate JSON.
+- Final evaluation CSV.
+- Final analysis JSON and Markdown.
+- Structural validation JSON.
+- Terminal output or error traceback.
+
+Do not remove the max-pressure baseline, raw-DQN ablation, deployment gate or
+paired seeds to make results appear stronger. Do not tune on final seeds
+701–705. Hyperparameter changes must use training seeds and validation seeds
+9601–9602, followed by a fresh final evaluation.

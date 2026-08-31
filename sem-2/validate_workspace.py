@@ -25,7 +25,13 @@ def main() -> None:
         "02-dynamic-traffic": ["README.md", "generate_routes.py", "evaluate_scenarios.py"],
         "03-multiobjective-dqn": ["README.md", "features.py", "train_dqn_v2.py", "evaluate_dqn_v2.py"],
         "04-ppo-comparison": ["README.md", "train_ppo.py", "evaluate_ppo.py"],
-        "05-multi-intersection": ["README.md", "train_multiagent.py", "evaluate_multiagent.py"],
+        "05-multi-intersection": [
+            "README.md",
+            "dqn_core.py",
+            "self_check.py",
+            "train_dqn.py",
+            "evaluate_dqn.py",
+        ],
     }
     report = {"structure": {}, "semester_1_hashes": {}, "passed": True}
     for folder, files in required.items():

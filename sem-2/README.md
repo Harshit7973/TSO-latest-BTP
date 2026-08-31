@@ -13,7 +13,7 @@ Semester 2 asks progressively stronger questions:
 2. Does the frozen model generalise when traffic demand changes?
 3. Can enhanced state and a multi-objective reward improve robustness?
 4. How does DQN compare with PPO under the same conditions?
-5. Can multiple intersections learn independently and cooperatively?
+5. Can a shared, interaction-aware DQN control four intersections robustly?
 
 These tasks reuse previously unused parts of the reference repository—custom
 observations/rewards, CO₂ metrics, PPO, PettingZoo-style multi-agent control,
@@ -27,7 +27,7 @@ observations/rewards, CO₂ metrics, PPO, PettingZoo-style multi-agent control,
 | `02-dynamic-traffic` | Six dynamic/unseen demand scenarios | 2–6 h |
 | `03-multiobjective-dqn` | New DQN-v2 plus v1/v2 ablation | 3–10 h total |
 | `04-ppo-comparison` | PPO training and fair comparison | 3–10 h total |
-| `05-multi-intersection` | Independent vs cooperative 2×2 control | 3–10 h total |
+| `05-multi-intersection` | Shared robust DQN on a four-signal 2×2 grid | 5–16 h total |
 
 Times are deliberately generous estimates. SUMO is often CPU-bound and laptop
 thermal limits matter more than the nominal RTX 3050 speed. Every long task is
@@ -68,7 +68,7 @@ python sem-2/validate_workspace.py
 3. Complete Task 2 to establish DQN-v1's generalisation limitation.
 4. Train and evaluate DQN-v2 as the principal contribution.
 5. Train PPO as the algorithmic comparison.
-6. Complete both 2×2 modes in Task 5.
+6. Train and evaluate the shared shielded DQN in Task 5.
 7. Attempt RESCO 4×4 only after all primary results are safely stored.
 
 Each task README contains exact commands, runtime ranges, saved artifact names
@@ -131,7 +131,8 @@ optional extension.
 
 - DQN saves model plus replay buffer every chunk.
 - PPO saves after each rollout chunk.
-- Multi-agent Q-learning saves atomically after every episode.
+- Multi-intersection DQN saves model, optimizer and replay atomically after
+  every episode.
 - Evaluation skips completed method/scenario/seed CSVs.
 - `--force` is required to replace evaluation files.
 - `--fresh` never deletes old checkpoints; manually move old experiments to an
