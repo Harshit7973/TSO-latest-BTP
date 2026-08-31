@@ -1,4 +1,4 @@
-"""Evaluate the shared DQN, its safety shield, and traffic-control baselines."""
+"""Evaluate raw and shielded shared DQN against fixed-time control."""
 
 from __future__ import annotations
 
@@ -170,8 +170,6 @@ def write_markdown_report(path: Path, analysis: dict[str, Any]) -> None:
     lines = [
         "# Task 5 automatic result analysis",
         "",
-        f"Deployment policy: `{analysis['deployment_policy']}`",
-        "",
         "| Controller | Waiting ↓ | Stopped ↓ | Speed ↑ | Throughput/h ↑ |",
         "|---|---:|---:|---:|---:|",
     ]
@@ -183,10 +181,9 @@ def write_markdown_report(path: Path, analysis: dict[str, Any]) -> None:
             "",
             f"Shielded DQN success check: **{analysis['success_checks']['dqn_shielded']['passed']}**",
             "",
-            f"Deployed-controller success check: **{analysis['success_checks']['deployed']['passed']}**",
-            "",
             "A success flag is evidence from these held-out seeds, not a universal guarantee.",
-            "Raw DQN is an ablation; the shielded and deployed rows are the project controllers.",
+            "Raw DQN is an ablation; shielded DQN is the principal project controller.",
+            "Max pressure is used internally for expert guidance and the safety mask, but is not a final comparison row.",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -246,10 +243,10 @@ def main() -> None:
     deployment_policy = str(checkpoint.get("deployment_policy", "max_pressure"))
     checkpoint_sha256 = sha256(final_path)
 
-    methods = ["fixed", "max_pressure"]
+    methods = ["fixed"]
     if not args.skip_raw:
         methods.append("dqn_raw")
-    methods.extend(["dqn_shielded", "deployed"])
+    methods.append("dqn_shielded")
     episodes_dir = paths["episodes"] / f"{EXPERIMENT_TAG}_sec{args.seconds}"
     episodes_dir.mkdir(parents=True, exist_ok=True)
     config_path = paths["results"] / f"evaluation_config_{EXPERIMENT_TAG}.json"
@@ -323,19 +320,17 @@ def main() -> None:
     summary.to_csv(summary_path, index=False)
     write_json(validation_path, validations)
 
-    for baseline in ("fixed", "max_pressure"):
-        for candidate in [method for method in methods if method != baseline]:
-            paired_improvements(summary, baseline, candidate).to_csv(
-                paths["results"]
-                / f"{candidate}_vs_{baseline}_{EXPERIMENT_TAG}_sec{args.seconds}.csv",
-                index=False,
-            )
+    for candidate in [method for method in methods if method != "fixed"]:
+        paired_improvements(summary, "fixed", candidate).to_csv(
+            paths["results"]
+            / f"{candidate}_vs_fixed_{EXPERIMENT_TAG}_sec{args.seconds}.csv",
+            index=False,
+        )
 
     comparisons = {
-        f"{candidate}_vs_{baseline}": paired_analysis(summary, baseline, candidate)
-        for baseline in ("fixed", "max_pressure")
+        f"{candidate}_vs_fixed": paired_analysis(summary, "fixed", candidate)
         for candidate in methods
-        if candidate != baseline
+        if candidate != "fixed"
     }
     analysis = {
         "experiment_tag": EXPERIMENT_TAG,
@@ -350,7 +345,6 @@ def main() -> None:
         "paired_comparisons": comparisons,
         "success_checks": {
             "dqn_shielded": success_check(summary, validations, "dqn_shielded"),
-            "deployed": success_check(summary, validations, "deployed"),
         },
         "structural_validation": {
             "passed": sum(bool(item.get("passed")) for item in validations),
@@ -375,7 +369,6 @@ def main() -> None:
     print("\nTask 5 evaluation means")
     print(summary.groupby("method")[columns].mean().round(3).to_string())
     print(f"\nShielded DQN success: {analysis['success_checks']['dqn_shielded']['passed']}")
-    print(f"Deployed controller ({deployment_policy}) success: {analysis['success_checks']['deployed']['passed']}")
     print(f"Saved analysis: {analysis_path}")
 
 

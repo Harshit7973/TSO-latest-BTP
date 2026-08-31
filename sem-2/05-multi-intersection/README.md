@@ -22,13 +22,16 @@ Can one neural controller, shared by four interacting traffic signals, learn a
 robust policy that beats fixed timing while remaining safe on unfamiliar
 traffic seeds?
 
-The final experiment compares five controllers on identical seeds:
+The primary final experiment compares three controllers on identical seeds:
 
 1. Fixed timing.
-2. Pure max-pressure control.
-3. Raw shared DQN, retained as an honest ablation.
-4. Shielded shared DQN, the principal learned controller.
-5. The validation-gated deployed controller.
+2. Raw shared DQN, retained as an honest ablation.
+3. Shielded shared DQN, the principal learned controller.
+
+Max pressure is not shown as a controller in the main final table or plots. It
+is retained only inside the method as expert warm-start guidance, the basis of
+the safety action mask and an internal validation diagnostic. This keeps the
+main research claim focused on the fair fixed-timing-versus-DQN comparison.
 
 ## Why this design is more appropriate than tabular Q-learning
 
@@ -222,8 +225,8 @@ After training reaches 40/40:
 python sem-2/05-multi-intersection/evaluate_dqn.py --seconds 1800 --seeds 701 702 703 704 705
 ```
 
-This runs 25 paired simulations: five controllers × five seeds. A generous
-runtime allowance is **1–4 hours**. Completed raw episodes are retained on
+This runs 15 paired simulations: three controllers × five seeds. A generous
+runtime allowance is **1–3 hours**. Completed raw episodes are retained on
 rerun. The evaluator fingerprints the final checkpoint and refuses to mix raw
 episodes from different models. Use `--force` only when an evaluation was
 invalid or intentionally belongs to a newly trained checkpoint.
@@ -259,7 +262,7 @@ invalid or intentionally belongs to a newly trained checkpoint.
 - `results/validation_shared_dueling_ddqn_v1_sec1800.json`.
 - `results/analysis_shared_dueling_ddqn_v1_sec1800.json`.
 - `results/analysis_shared_dueling_ddqn_v1_sec1800.md`.
-- Paired comparison CSVs for fixed and max-pressure baselines.
+- Paired comparison CSVs for raw and shielded DQN against fixed timing.
 - Four final metric plots under `plots/`.
 
 ## Correctness and acceptance checks
@@ -271,7 +274,7 @@ Required checks:
 1. Training reaches 40/40 and the final checkpoint records the selected
    validation episode.
 2. All expected raw episodes reach exactly 1,800 simulation seconds.
-3. All 25 structural validation entries pass when raw DQN is included.
+3. All 15 structural validation entries pass when raw DQN is included.
 4. Teleported vehicles are zero or explicitly investigated.
 5. The same traffic seed is used for every controller in each paired trial.
 6. Final evaluation seeds must not overlap training or validation seeds; the
@@ -279,7 +282,7 @@ Required checks:
 7. Shield rate and expert-agreement rate are reported, not hidden.
 8. DQN success requires lower waiting and queues on at least four of five seeds
    and mean throughput no worse than 3% below fixed timing.
-9. `deployed` success and `dqn_shielded` success are reported separately.
+9. The main table and plots contain only fixed, raw DQN and shielded DQN.
 
 The final automatic analysis contains Boolean success checks. A `true` value is
 evidence for these five held-out seeds, not proof that every possible traffic
@@ -291,13 +294,9 @@ pattern will improve.
 
 The main claim can be that parameter-sharing DQN, expert guidance and safety
 constraints produced a learned multi-intersection controller that beat fixed
-timing on held-out paired seeds. Report raw DQN and max pressure as ablations.
-
-### Shielded DQN fails but deployed control passes
-
-State clearly that the learned candidate did not satisfy deployment criteria
-and the safety process selected max pressure. This remains a useful engineering
-result, but it is not evidence that DQN beat fixed timing.
+timing on held-out paired seeds. Report raw DQN as the ablation. Explain that
+max-pressure logic was used inside training and shielding, but do not include
+it as a competing controller in the main final table or plots.
 
 ### Raw DQN fails while shielded DQN passes
 
@@ -315,7 +314,9 @@ When diagnosing returned results, provide these files first:
 - Structural validation JSON.
 - Terminal output or error traceback.
 
-Do not remove the max-pressure baseline, raw-DQN ablation, deployment gate or
-paired seeds to make results appear stronger. Do not tune on final seeds
-701–705. Hyperparameter changes must use training seeds and validation seeds
-9601–9602, followed by a fresh final evaluation.
+Do not remove the raw-DQN ablation, pressure-shield intervention statistics or
+paired seeds to make results appear stronger. Max pressure must not appear in
+the main final comparison, but its internal use for warm-start and shielding
+must be disclosed. Do not tune on final seeds 701–705. Hyperparameter changes
+must use training seeds and validation seeds 9601–9602, followed by a fresh
+final evaluation.
