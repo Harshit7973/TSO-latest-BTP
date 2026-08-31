@@ -1,0 +1,212 @@
+{
+  "checkpoint": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\shared_dueling_ddqn_v1_final.pt",
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "deployment_gate": {
+    "dqn_validation": {
+      "episode": 15.0,
+      "mean_speed": 8.013112935498611,
+      "mean_stopped": 3.9027777777777777,
+      "mean_waiting": 21.641666666666666,
+      "score": 60.669444444444444,
+      "throughput_veh_per_hour": 1300.0
+    },
+    "fixed_validation": {
+      "mean_speed": 6.4091514281825255,
+      "mean_stopped": 10.53888888888889,
+      "mean_waiting": 221.18055555555554,
+      "score": 326.56944444444446,
+      "throughput_veh_per_hour": 1282.0
+    },
+    "max_pressure_validation": {
+      "mean_speed": 8.011153265189984,
+      "mean_stopped": 4.019444444444445,
+      "mean_waiting": 23.394444444444446,
+      "score": 63.58888888888889,
+      "throughput_veh_per_hour": 1286.0
+    },
+    "passed": true,
+    "requirements": {
+      "dqn_score_lte_fraction_of_fixed": 0.85,
+      "dqn_throughput_gte_fraction_of_fixed": 0.97
+    }
+  },
+  "deployment_policy": "dqn_shielded",
+  "evaluation_seeds": [
+    701,
+    702,
+    703,
+    704,
+    705
+  ],
+  "experiment_tag": "shared_dueling_ddqn_v1",
+  "group_statistics": {
+    "dqn_raw": {
+      "expert_agreement_rate": 0.9961111111111111,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.08063562448184429,
+        "mean": 7.957199669087049
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.2320738749984369,
+        "mean": 4.084444444444444
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 2.0234901648902093,
+        "mean": 23.455000000000002
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 39.10973607683898,
+        "mean": 1384.4
+      }
+    },
+    "dqn_shielded": {
+      "expert_agreement_rate": 0.9962500000000001,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.08063562448184429,
+        "mean": 7.957199669087049
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.2320738749984369,
+        "mean": 4.084444444444444
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 2.0234901648902093,
+        "mean": 23.455000000000002
+      },
+      "shield_rate": 0.00013888888888888,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 39.10973607683898,
+        "mean": 1384.4
+      }
+    },
+    "fixed": {
+      "expert_agreement_rate": 0.0,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.09105947105485851,
+        "mean": 6.384062462701711
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.6745884177284202,
+        "mean": 10.794444444444444
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 14.854278598055236,
+        "mean": 225.37333333333336
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 37.587056495554414,
+        "mean": 1377.6
+      }
+    }
+  },
+  "paired_comparisons": {
+    "dqn_raw_vs_fixed": {
+      "baseline": "fixed",
+      "candidate": "dqn_raw",
+      "metrics": {
+        "mean_system_mean_speed": {
+          "max_improvement_pct": 26.346659741419227,
+          "mean_improvement_pct": 24.655435042355208,
+          "min_improvement_pct": 22.430668298194707,
+          "trials": 5,
+          "wins": 5
+        },
+        "mean_system_total_stopped": {
+          "max_improvement_pct": 63.48657985649747,
+          "mean_improvement_pct": 62.13473172235835,
+          "min_improvement_pct": 60.536836093660774,
+          "trials": 5,
+          "wins": 5
+        },
+        "mean_system_total_waiting_time": {
+          "max_improvement_pct": 90.53568048457315,
+          "mean_improvement_pct": 89.59527492284315,
+          "min_improvement_pct": 88.91259582702756,
+          "trials": 5,
+          "wins": 5
+        },
+        "throughput_veh_per_hour": {
+          "max_improvement_pct": 0.7163323782234957,
+          "mean_improvement_pct": 0.49091695047887274,
+          "min_improvement_pct": 0.1519756838905775,
+          "trials": 5,
+          "wins": 5
+        }
+      },
+      "seeds": [
+        701,
+        702,
+        703,
+        704,
+        705
+      ]
+    },
+    "dqn_shielded_vs_fixed": {
+      "baseline": "fixed",
+      "candidate": "dqn_shielded",
+      "metrics": {
+        "mean_system_mean_speed": {
+          "max_improvement_pct": 26.346659741419227,
+          "mean_improvement_pct": 24.655435042355208,
+          "min_improvement_pct": 22.430668298194707,
+          "trials": 5,
+          "wins": 5
+        },
+        "mean_system_total_stopped": {
+          "max_improvement_pct": 63.48657985649747,
+          "mean_improvement_pct": 62.13473172235835,
+          "min_improvement_pct": 60.536836093660774,
+          "trials": 5,
+          "wins": 5
+        },
+        "mean_system_total_waiting_time": {
+          "max_improvement_pct": 90.53568048457315,
+          "mean_improvement_pct": 89.59527492284315,
+          "min_improvement_pct": 88.91259582702756,
+          "trials": 5,
+          "wins": 5
+        },
+        "throughput_veh_per_hour": {
+          "max_improvement_pct": 0.7163323782234957,
+          "mean_improvement_pct": 0.49091695047887274,
+          "min_improvement_pct": 0.1519756838905775,
+          "trials": 5,
+          "wins": 5
+        }
+      },
+      "seeds": [
+        701,
+        702,
+        703,
+        704,
+        705
+      ]
+    }
+  },
+  "policy_checkpoint_episode": 15,
+  "structural_validation": {
+    "passed": 15,
+    "total": 15
+  },
+  "success_checks": {
+    "dqn_shielded": {
+      "observed": {
+        "mean_throughput_change_pct": 0.49091695047887274,
+        "minimum_congestion_wins": 5,
+        "structural_pass": true,
+        "trials": 5,
+        "zero_teleports": true
+      },
+      "passed": true,
+      "requirements": {
+        "all_structural_checks": true,
+        "mean_throughput_change_at_least_pct": -3.0,
+        "waiting_and_queue_wins_at_least": "4/5",
+        "zero_teleports": true
+      }
+    }
+  },
+  "training_completed_episode": 40
+}

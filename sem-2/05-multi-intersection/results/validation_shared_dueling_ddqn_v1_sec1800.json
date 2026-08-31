@@ -1,0 +1,197 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_raw__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_raw__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_raw__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_raw__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_raw__seed705.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_shielded__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_shielded__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_shielded__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_shielded__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\dqn_shielded__seed705.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\fixed__seed701.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\fixed__seed702.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\fixed__seed703.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\fixed__seed704.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\results\\episodes\\shared_dueling_ddqn_v1_sec1800\\fixed__seed705.csv",
+    "passed": true
+  }
+]

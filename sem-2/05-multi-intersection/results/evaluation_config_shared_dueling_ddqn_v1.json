@@ -1,0 +1,32 @@
+{
+  "checkpoint": "D:\\EBACKUP\\BTP\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\shared_dueling_ddqn_v1_final.pt",
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "command_line": [
+    "evaluate_dqn.py",
+    "--seconds",
+    "1800",
+    "--seeds",
+    "701",
+    "702",
+    "703",
+    "704",
+    "705"
+  ],
+  "deployment_policy": "dqn_shielded",
+  "device": "cpu",
+  "methods": [
+    "fixed",
+    "dqn_raw",
+    "dqn_shielded"
+  ],
+  "pressure_gap": 2.0,
+  "seconds": 1800,
+  "seeds": [
+    701,
+    702,
+    703,
+    704,
+    705
+  ],
+  "status": "complete"
+}
