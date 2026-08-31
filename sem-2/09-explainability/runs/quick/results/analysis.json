@@ -1,0 +1,188 @@
+{
+  "analysis_sample_rows": 400,
+  "behaviour": {
+    "expert_agreement_rate": 0.99375,
+    "mean_q_margin": 4.111395939067006,
+    "median_q_margin": 2.3091274499893184,
+    "raw_expert_agreement_rate": 0.99375,
+    "shield_intervention_rate": 0.0
+  },
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "correctness": {
+    "all_feature_groups_present": true,
+    "expected_decision_rows": true,
+    "finite_states_and_q_values": true,
+    "importance_is_finite": true,
+    "passed": true,
+    "per_seed_feature_groups_complete": true,
+    "structural_validation": true,
+    "valid_actions": true
+  },
+  "decision_rows": 480,
+  "feature_rank_correlation_across_seeds": {
+    "1491": {
+      "1491": 1.0
+    }
+  },
+  "limitations": [
+    "Gradient and permutation importance describe sensitivity, not causal traffic effects.",
+    "Feature groups are correlated, so importance can be shared or displaced between groups.",
+    "The explained model was trained with max-pressure expert guidance.",
+    "Three explanation seeds are for behavioural coverage, not population-wide inference."
+  ],
+  "ranked_feature_groups": [
+    {
+      "combined_importance": 0.3323645919830314,
+      "feature_count": 4,
+      "feature_group": "phase",
+      "mean_abs_gradient": 0.5544957518577576,
+      "normalised_mean_abs_gradient": 0.09203889246578738,
+      "normalised_permutation_action_flip_rate": 0.39895013123359585,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.506104752249711,
+      "occlusion_action_flip_rate": 0.485,
+      "occlusion_mean_abs_chosen_q_change": 1.2323764562606812,
+      "permutation_action_flip_rate": 0.38,
+      "permutation_mean_abs_chosen_q_change": 2.187654972076416,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.34078615425161946,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.21001516221257618,
+      "feature_count": 1,
+      "feature_group": "minimum_green",
+      "mean_abs_gradient": 1.2826790809631348,
+      "normalised_mean_abs_gradient": 0.21290760408055467,
+      "normalised_permutation_action_flip_rate": 0.19422572178477693,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.22291216077239692,
+      "occlusion_action_flip_rate": 0.3475,
+      "occlusion_mean_abs_chosen_q_change": 2.5726213455200195,
+      "permutation_action_flip_rate": 0.185,
+      "permutation_mean_abs_chosen_q_change": 0.9635453820228577,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.23136648425445305,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.139011282591292,
+      "feature_count": 4,
+      "feature_group": "incoming_queue",
+      "mean_abs_gradient": 1.0176886320114136,
+      "normalised_mean_abs_gradient": 0.16892272709310266,
+      "normalised_permutation_action_flip_rate": 0.16535433070866143,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.08275678997211196,
+      "occlusion_action_flip_rate": 0.06,
+      "occlusion_mean_abs_chosen_q_change": 0.12786057591438293,
+      "permutation_action_flip_rate": 0.1575,
+      "permutation_mean_abs_chosen_q_change": 0.3577190339565277,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.1175211272132536,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.13785309260493028,
+      "feature_count": 4,
+      "feature_group": "pressure",
+      "mean_abs_gradient": 0.8245227336883545,
+      "normalised_mean_abs_gradient": 0.13685976667501462,
+      "normalised_permutation_action_flip_rate": 0.1837270341207349,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.09297247701904131,
+      "occlusion_action_flip_rate": 0.055,
+      "occlusion_mean_abs_chosen_q_change": 0.11711309105157852,
+      "permutation_action_flip_rate": 0.175,
+      "permutation_mean_abs_chosen_q_change": 0.40187668800354004,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.1231259338641582,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.05375028260925521,
+      "feature_count": 4,
+      "feature_group": "outgoing_queue",
+      "mean_abs_gradient": 0.5977171063423157,
+      "normalised_mean_abs_gradient": 0.09921306031883595,
+      "normalised_permutation_action_flip_rate": 0.041994750656167985,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.020043036852761716,
+      "occlusion_action_flip_rate": 0.025,
+      "occlusion_mean_abs_chosen_q_change": 0.03281678631901741,
+      "permutation_action_flip_rate": 0.04,
+      "permutation_mean_abs_chosen_q_change": 0.08663670718669891,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.0599197225768639,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.04478219685631574,
+      "feature_count": 1,
+      "feature_group": "local_queue",
+      "mean_abs_gradient": 0.7118948101997375,
+      "normalised_mean_abs_gradient": 0.11816503492299765,
+      "normalised_permutation_action_flip_rate": 0.005249343832020998,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.010932211813928575,
+      "occlusion_action_flip_rate": 0.0025,
+      "occlusion_mean_abs_chosen_q_change": 0.031070716679096222,
+      "permutation_action_flip_rate": 0.005,
+      "permutation_mean_abs_chosen_q_change": 0.047254856675863266,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.044869051973434736,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.03726551021786135,
+      "feature_count": 4,
+      "feature_group": "intersection_identity",
+      "mean_abs_gradient": 0.3708600699901581,
+      "normalised_mean_abs_gradient": 0.061557820753935504,
+      "normalised_permutation_action_flip_rate": 0.007874015748031496,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.04236469415161707,
+      "occlusion_action_flip_rate": 0.225,
+      "occlusion_mean_abs_chosen_q_change": 0.5628631114959717,
+      "permutation_action_flip_rate": 0.0075,
+      "permutation_mean_abs_chosen_q_change": 0.18312282860279083,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.0369473666539741,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.0302417971947344,
+      "feature_count": 3,
+      "feature_group": "network_context",
+      "mean_abs_gradient": 0.4661023020744324,
+      "normalised_mean_abs_gradient": 0.07736675982630335,
+      "normalised_permutation_action_flip_rate": 0.002624671916010499,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.010733959841889355,
+      "occlusion_action_flip_rate": 0.0025,
+      "occlusion_mean_abs_chosen_q_change": 0.055711422115564346,
+      "permutation_action_flip_rate": 0.0025,
+      "permutation_mean_abs_chosen_q_change": 0.04639790579676628,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.031085025878536465,
+      "seed_std_combined_importance": 0.0
+    },
+    {
+      "combined_importance": 0.014716083730003438,
+      "feature_count": 1,
+      "feature_group": "simulation_progress",
+      "mean_abs_gradient": 0.19862039387226105,
+      "normalised_mean_abs_gradient": 0.0329683338634682,
+      "normalised_permutation_action_flip_rate": 0.0,
+      "normalised_permutation_mean_abs_chosen_q_change": 0.011179917326542114,
+      "occlusion_action_flip_rate": 0.0025,
+      "occlusion_mean_abs_chosen_q_change": 0.07928776741027832,
+      "permutation_action_flip_rate": 0.0,
+      "permutation_mean_abs_chosen_q_change": 0.04832557216286659,
+      "seed_ci95_half_width": 0.0,
+      "seed_mean_combined_importance": 0.014379133333706511,
+      "seed_std_combined_importance": 0.0
+    }
+  ],
+  "representative_case_labels": [
+    "highest_margin",
+    "lowest_margin",
+    "expert_disagreement"
+  ],
+  "run_name": "quick",
+  "seeds": [
+    1491
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "checkpoint": "D:\\TSO\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\shared_dueling_ddqn_v1_final.pt",
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "command_line": [
+    "sem-2/09-explainability/run_explainability.py",
+    "--run-name",
+    "quick",
+    "--seconds",
+    "600",
+    "--seeds",
+    "1491",
+    "--max-analysis-samples",
+    "400",
+    "--device",
+    "cpu"
+  ],
+  "device": "cpu",
+  "max_analysis_samples": 400,
+  "methods": [
+    "gradient_saliency",
+    "zero_occlusion",
+    "distribution_preserving_permutation"
+  ],
+  "pressure_gap": 2.0,
+  "run_name": "quick",
+  "seconds": 600,
+  "seeds": [
+    1491
+  ],
+  "status": "complete"
+}

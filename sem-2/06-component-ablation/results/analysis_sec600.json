@@ -1,0 +1,449 @@
+{
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "group_statistics": {
+    "fixed": {
+      "expert_agreement_rate": 0.0,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.0,
+        "mean": 6.520635687194736
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.0,
+        "mean": 10.933333333333334
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 0.0,
+        "mean": 221.05833333333334
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 0.0,
+        "mean": 1314.0
+      }
+    },
+    "full_dqn": {
+      "expert_agreement_rate": 0.9958333333333332,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.0,
+        "mean": 7.899581489655096
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.0,
+        "mean": 4.325
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 0.0,
+        "mean": 24.883333333333333
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 0.0,
+        "mean": 1344.0
+      }
+    },
+    "no_identity": {
+      "expert_agreement_rate": 0.875,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.0,
+        "mean": 8.8026498021847
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.0,
+        "mean": 2.55
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 0.0,
+        "mean": 10.316666666666666
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 0.0,
+        "mean": 1344.0
+      }
+    },
+    "no_network_context": {
+      "expert_agreement_rate": 1.0,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.0,
+        "mean": 7.971083295734942
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.0,
+        "mean": 4.25
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 0.0,
+        "mean": 23.858333333333334
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 0.0,
+        "mean": 1350.0
+      }
+    },
+    "no_pressure": {
+      "expert_agreement_rate": 0.9395833333333332,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.0,
+        "mean": 8.412635716523253
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.0,
+        "mean": 3.375
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 0.0,
+        "mean": 14.683333333333334
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 0.0,
+        "mean": 1362.0
+      }
+    },
+    "raw_dqn": {
+      "expert_agreement_rate": 0.9958333333333332,
+      "mean_system_mean_speed": {
+        "ci95_half_width": 0.0,
+        "mean": 7.899581489655096
+      },
+      "mean_system_total_stopped": {
+        "ci95_half_width": 0.0,
+        "mean": 4.325
+      },
+      "mean_system_total_waiting_time": {
+        "ci95_half_width": 0.0,
+        "mean": 24.883333333333333
+      },
+      "shield_rate": 0.0,
+      "throughput_veh_per_hour": {
+        "ci95_half_width": 0.0,
+        "mean": 1344.0
+      }
+    }
+  },
+  "limitations": [
+    "Occlusion changes one frozen model's inputs and is not equivalent to retraining without a component.",
+    "Zero-valued features may be outside some training-state combinations.",
+    "The pressure shield still uses the simulator's unoccluded state."
+  ],
+  "paired_bootstrap": {
+    "full_dqn_vs_fixed": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 21.147413666559263,
+          "ci95_low_pct": 21.147413666559263,
+          "mean_improvement_pct": 21.147413666559263,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 60.4420731707317,
+          "ci95_low_pct": 60.4420731707317,
+          "mean_improvement_pct": 60.4420731707317,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 88.74354431334113,
+          "ci95_low_pct": 88.74354431334113,
+          "mean_improvement_pct": 88.74354431334113,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 2.28310502283105,
+          "ci95_low_pct": 2.28310502283105,
+          "mean_improvement_pct": 2.28310502283105,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "no_identity_vs_fixed": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 34.9968043678839,
+          "ci95_low_pct": 34.9968043678839,
+          "mean_improvement_pct": 34.9968043678839,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 76.67682926829268,
+          "ci95_low_pct": 76.67682926829268,
+          "mean_improvement_pct": 76.67682926829268,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 95.33305688543749,
+          "ci95_low_pct": 95.33305688543749,
+          "mean_improvement_pct": 95.33305688543749,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 2.28310502283105,
+          "ci95_low_pct": 2.28310502283105,
+          "mean_improvement_pct": 2.28310502283105,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "no_identity_vs_full_dqn": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 11.43185007600994,
+          "ci95_low_pct": 11.43185007600994,
+          "mean_improvement_pct": 11.43185007600994,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 41.04046242774567,
+          "ci95_low_pct": 41.04046242774567,
+          "mean_improvement_pct": 41.04046242774567,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 58.53985264567984,
+          "ci95_low_pct": 58.53985264567984,
+          "mean_improvement_pct": 58.53985264567984,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 0.0,
+          "ci95_low_pct": 0.0,
+          "mean_improvement_pct": 0.0,
+          "trials": 1,
+          "wins": 0
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "no_network_context_vs_fixed": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 22.243960222905923,
+          "ci95_low_pct": 22.243960222905923,
+          "mean_improvement_pct": 22.243960222905923,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 61.12804878048781,
+          "ci95_low_pct": 61.12804878048781,
+          "mean_improvement_pct": 61.12804878048781,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 89.20722282956987,
+          "ci95_low_pct": 89.20722282956987,
+          "mean_improvement_pct": 89.20722282956987,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 2.73972602739726,
+          "ci95_low_pct": 2.73972602739726,
+          "mean_improvement_pct": 2.73972602739726,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "no_network_context_vs_full_dqn": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 0.9051341032873752,
+          "ci95_low_pct": 0.9051341032873752,
+          "mean_improvement_pct": 0.9051341032873752,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 1.7341040462427786,
+          "ci95_low_pct": 1.7341040462427786,
+          "mean_improvement_pct": 1.7341040462427786,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 4.119223040857328,
+          "ci95_low_pct": 4.119223040857328,
+          "mean_improvement_pct": 4.119223040857328,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 0.4464285714285714,
+          "ci95_low_pct": 0.4464285714285714,
+          "mean_improvement_pct": 0.4464285714285714,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "no_pressure_vs_fixed": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 29.01557639608724,
+          "ci95_low_pct": 29.01557639608724,
+          "mean_improvement_pct": 29.01557639608724,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 69.1310975609756,
+          "ci95_low_pct": 69.1310975609756,
+          "mean_improvement_pct": 69.1310975609756,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 93.35771101142231,
+          "ci95_low_pct": 93.35771101142231,
+          "mean_improvement_pct": 93.35771101142231,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 3.65296803652968,
+          "ci95_low_pct": 3.65296803652968,
+          "mean_improvement_pct": 3.65296803652968,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "no_pressure_vs_full_dqn": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 6.494701365382801,
+          "ci95_low_pct": 6.494701365382801,
+          "mean_improvement_pct": 6.494701365382801,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 21.965317919075147,
+          "ci95_low_pct": 21.965317919075147,
+          "mean_improvement_pct": 21.965317919075147,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 40.99129269926323,
+          "ci95_low_pct": 40.99129269926323,
+          "mean_improvement_pct": 40.99129269926323,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 1.3392857142857142,
+          "ci95_low_pct": 1.3392857142857142,
+          "mean_improvement_pct": 1.3392857142857142,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "raw_dqn_vs_fixed": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 21.147413666559263,
+          "ci95_low_pct": 21.147413666559263,
+          "mean_improvement_pct": 21.147413666559263,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 60.4420731707317,
+          "ci95_low_pct": 60.4420731707317,
+          "mean_improvement_pct": 60.4420731707317,
+          "trials": 1,
+          "wins": 1
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 88.74354431334113,
+          "ci95_low_pct": 88.74354431334113,
+          "mean_improvement_pct": 88.74354431334113,
+          "trials": 1,
+          "wins": 1
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 2.28310502283105,
+          "ci95_low_pct": 2.28310502283105,
+          "mean_improvement_pct": 2.28310502283105,
+          "trials": 1,
+          "wins": 1
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    },
+    "raw_dqn_vs_full_dqn": {
+      "metrics": {
+        "mean_system_mean_speed": {
+          "ci95_high_pct": 0.0,
+          "ci95_low_pct": 0.0,
+          "mean_improvement_pct": 0.0,
+          "trials": 1,
+          "wins": 0
+        },
+        "mean_system_total_stopped": {
+          "ci95_high_pct": 0.0,
+          "ci95_low_pct": 0.0,
+          "mean_improvement_pct": 0.0,
+          "trials": 1,
+          "wins": 0
+        },
+        "mean_system_total_waiting_time": {
+          "ci95_high_pct": 0.0,
+          "ci95_low_pct": 0.0,
+          "mean_improvement_pct": 0.0,
+          "trials": 1,
+          "wins": 0
+        },
+        "throughput_veh_per_hour": {
+          "ci95_high_pct": 0.0,
+          "ci95_low_pct": 0.0,
+          "mean_improvement_pct": 0.0,
+          "trials": 1,
+          "wins": 0
+        }
+      },
+      "pairs": 1,
+      "resamples": 1000
+    }
+  },
+  "seeds": [
+    1091
+  ],
+  "structural_validation": {
+    "passed": 6,
+    "total": 6
+  },
+  "study_type": "post-training feature occlusion",
+  "success_checks": {
+    "full_dqn_vs_fixed": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "command_line": [
+    "sem-2/08-transfer-learning/evaluate_transfer.py",
+    "--run-name",
+    "quick",
+    "--seconds",
+    "600",
+    "--seeds",
+    "1293",
+    "--device",
+    "cpu",
+    "--bootstrap-resamples",
+    "1000"
+  ],
+  "device": "cpu",
+  "fine_tuned_checkpoint_sha256": "5c0a5b784f9737b7366a750b28f53b2d4d4a0248e4de5c6ffc44602171e5d71d",
+  "methods": [
+    "fixed",
+    "zero_shot",
+    "fine_tuned",
+    "scratch"
+  ],
+  "route_sha256": {
+    "reverse_vertical": "eaea8f8fc9832d0b7832a59a759068898bcacdb816a5ec00991a7ef11e9d098b",
+    "target_horizontal": "77105ba2a3f1f105bb3922b0693ae2bab7ada68659b8d0965df53cc0bef13c70"
+  },
+  "run_name": "quick",
+  "scenarios": [
+    "target_horizontal",
+    "reverse_vertical"
+  ],
+  "scratch_checkpoint_sha256": "508dbec0eb0dc27070416b313c830ecad9b56481d0a05b3c87242f520acbb386",
+  "seconds": 600,
+  "seeds": [
+    1293
+  ],
+  "selected_episodes": {
+    "fine_tuned": 0,
+    "scratch": 2
+  },
+  "source_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "status": "complete"
+}

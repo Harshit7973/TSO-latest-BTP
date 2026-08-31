@@ -1,0 +1,10 @@
+feature_group,seed_mean_combined_importance,seed_std_combined_importance,seed_ci95_half_width
+incoming_queue,0.1175211272132536,0.0,0.0
+intersection_identity,0.0369473666539741,0.0,0.0
+local_queue,0.044869051973434736,0.0,0.0
+minimum_green,0.23136648425445305,0.0,0.0
+network_context,0.031085025878536465,0.0,0.0
+outgoing_queue,0.0599197225768639,0.0,0.0
+phase,0.34078615425161946,0.0,0.0
+pressure,0.1231259338641582,0.0,0.0
+simulation_progress,0.014379133333706511,0.0,0.0

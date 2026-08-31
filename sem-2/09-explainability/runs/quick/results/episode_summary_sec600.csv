@@ -1,0 +1,2 @@
+method,seed,requested_seconds,recorded_steps,final_sim_time,total_reward,mean_system_total_waiting_time,max_system_total_waiting_time,mean_system_mean_waiting_time,max_system_mean_waiting_time,mean_system_total_stopped,max_system_total_stopped,mean_system_mean_speed,max_system_mean_speed,final_system_total_departed,final_system_total_arrived,final_system_total_teleported,throughput_veh_per_hour
+dqn_shielded,1491,600,120,600.0,-117.25,21.7,107.0,0.9139286087150907,4.631578947368421,3.908333333333333,15.0,8.151114298962456,14.134332104096664,232.0,216.0,0.0,1296.0

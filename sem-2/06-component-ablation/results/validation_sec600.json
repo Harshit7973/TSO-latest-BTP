@@ -1,0 +1,80 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\06-component-ablation\\results\\episodes\\sec600\\fixed__seed1091.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\06-component-ablation\\results\\episodes\\sec600\\full_dqn__seed1091.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\06-component-ablation\\results\\episodes\\sec600\\no_identity__seed1091.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\06-component-ablation\\results\\episodes\\sec600\\no_network_context__seed1091.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\06-component-ablation\\results\\episodes\\sec600\\no_pressure__seed1091.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\06-component-ablation\\results\\episodes\\sec600\\raw_dqn__seed1091.csv",
+    "passed": true
+  }
+]

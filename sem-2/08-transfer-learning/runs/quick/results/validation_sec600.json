@@ -1,0 +1,106 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\fine_tuned__reverse_vertical__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\fine_tuned__target_horizontal__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\fixed__reverse_vertical__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\fixed__target_horizontal__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\scratch__reverse_vertical__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\scratch__target_horizontal__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\zero_shot__reverse_vertical__seed1293.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick\\results\\episodes\\sec600\\zero_shot__target_horizontal__seed1293.csv",
+    "passed": true
+  }
+]

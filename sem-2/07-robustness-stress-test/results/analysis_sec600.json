@@ -1,0 +1,165 @@
+{
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "limitations": [
+    "Sensor corruption affects DQN observations, while the shield uses true simulator pressure.",
+    "One partial blockage and one demand scale do not span all real incidents.",
+    "SUMO results require real detector and traffic calibration before deployment claims."
+  ],
+  "scenario_comparisons": {
+    "gaussian_noise": {
+      "dqn_raw_vs_fixed": {
+        "metrics": {
+          "mean_system_mean_speed": {
+            "ci95_high_pct": 18.450408000867554,
+            "ci95_low_pct": 18.450408000867554,
+            "mean_improvement_pct": 18.450408000867554,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_stopped": {
+            "ci95_high_pct": 57.417582417582416,
+            "ci95_low_pct": 57.417582417582416,
+            "mean_improvement_pct": 57.417582417582416,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_waiting_time": {
+            "ci95_high_pct": 86.69603524229075,
+            "ci95_low_pct": 86.69603524229075,
+            "mean_improvement_pct": 86.69603524229075,
+            "trials": 1,
+            "wins": 1
+          },
+          "throughput_veh_per_hour": {
+            "ci95_high_pct": 3.5555555555555554,
+            "ci95_low_pct": 3.5555555555555554,
+            "mean_improvement_pct": 3.5555555555555554,
+            "trials": 1,
+            "wins": 1
+          }
+        },
+        "pairs": 1,
+        "resamples": 1000
+      },
+      "dqn_shielded_vs_fixed": {
+        "metrics": {
+          "mean_system_mean_speed": {
+            "ci95_high_pct": 20.98279578730404,
+            "ci95_low_pct": 20.98279578730404,
+            "mean_improvement_pct": 20.98279578730404,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_stopped": {
+            "ci95_high_pct": 59.89010989010989,
+            "ci95_low_pct": 59.89010989010989,
+            "mean_improvement_pct": 59.89010989010989,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_waiting_time": {
+            "ci95_high_pct": 87.33988478481871,
+            "ci95_low_pct": 87.33988478481871,
+            "mean_improvement_pct": 87.33988478481871,
+            "trials": 1,
+            "wins": 1
+          },
+          "throughput_veh_per_hour": {
+            "ci95_high_pct": 2.666666666666667,
+            "ci95_low_pct": 2.666666666666667,
+            "mean_improvement_pct": 2.666666666666667,
+            "trials": 1,
+            "wins": 1
+          }
+        },
+        "pairs": 1,
+        "resamples": 1000
+      }
+    },
+    "nominal": {
+      "dqn_raw_vs_fixed": {
+        "metrics": {
+          "mean_system_mean_speed": {
+            "ci95_high_pct": 20.67074877896694,
+            "ci95_low_pct": 20.67074877896694,
+            "mean_improvement_pct": 20.67074877896694,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_stopped": {
+            "ci95_high_pct": 58.585164835164825,
+            "ci95_low_pct": 58.585164835164825,
+            "mean_improvement_pct": 58.585164835164825,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_waiting_time": {
+            "ci95_high_pct": 86.33344628939344,
+            "ci95_low_pct": 86.33344628939344,
+            "mean_improvement_pct": 86.33344628939344,
+            "trials": 1,
+            "wins": 1
+          },
+          "throughput_veh_per_hour": {
+            "ci95_high_pct": 4.0,
+            "ci95_low_pct": 4.0,
+            "mean_improvement_pct": 4.0,
+            "trials": 1,
+            "wins": 1
+          }
+        },
+        "pairs": 1,
+        "resamples": 1000
+      },
+      "dqn_shielded_vs_fixed": {
+        "metrics": {
+          "mean_system_mean_speed": {
+            "ci95_high_pct": 20.67074877896694,
+            "ci95_low_pct": 20.67074877896694,
+            "mean_improvement_pct": 20.67074877896694,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_stopped": {
+            "ci95_high_pct": 58.585164835164825,
+            "ci95_low_pct": 58.585164835164825,
+            "mean_improvement_pct": 58.585164835164825,
+            "trials": 1,
+            "wins": 1
+          },
+          "mean_system_total_waiting_time": {
+            "ci95_high_pct": 86.33344628939344,
+            "ci95_low_pct": 86.33344628939344,
+            "mean_improvement_pct": 86.33344628939344,
+            "trials": 1,
+            "wins": 1
+          },
+          "throughput_veh_per_hour": {
+            "ci95_high_pct": 4.0,
+            "ci95_low_pct": 4.0,
+            "mean_improvement_pct": 4.0,
+            "trials": 1,
+            "wins": 1
+          }
+        },
+        "pairs": 1,
+        "resamples": 1000
+      }
+    }
+  },
+  "scenarios": [
+    "nominal",
+    "gaussian_noise"
+  ],
+  "structural_validation": {
+    "passed": 6,
+    "total": 6
+  },
+  "success_checks": {
+    "passed": true,
+    "passing_scenarios": 2,
+    "per_scenario_rule": "waiting and stopped wins >=80% of seeds; mean throughput >=-5%",
+    "required_scenarios": 2,
+    "zero_teleports": true
+  }
+}

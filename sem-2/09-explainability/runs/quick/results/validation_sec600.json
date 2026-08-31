@@ -1,0 +1,15 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\09-explainability\\runs\\quick\\results\\episodes\\sec600\\dqn_shielded__seed1491.csv",
+    "passed": true
+  }
+]

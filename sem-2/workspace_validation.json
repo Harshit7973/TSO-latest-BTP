@@ -24,6 +24,26 @@
       "passed": true,
       "missing_files": [],
       "missing_output_dirs": []
+    },
+    "06-component-ablation": {
+      "passed": true,
+      "missing_files": [],
+      "missing_output_dirs": []
+    },
+    "07-robustness-stress-test": {
+      "passed": true,
+      "missing_files": [],
+      "missing_output_dirs": []
+    },
+    "08-transfer-learning": {
+      "passed": true,
+      "missing_files": [],
+      "missing_output_dirs": []
+    },
+    "09-explainability": {
+      "passed": true,
+      "missing_files": [],
+      "missing_output_dirs": []
     }
   },
   "semester_1_hashes": {

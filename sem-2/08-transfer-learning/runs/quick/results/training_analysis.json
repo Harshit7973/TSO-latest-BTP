@@ -1,0 +1,55 @@
+{
+  "experiment_root": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\runs\\quick",
+  "limitations": [
+    "Fine-tuning inherits the expert-guided Task 5 source policy.",
+    "Scratch and fine-tuned models use a pressure action shield during target training.",
+    "Twelve episodes measure limited-budget adaptation, not asymptotic performance."
+  ],
+  "paired_training_seeds": [
+    1201,
+    1202
+  ],
+  "route_manifest": {
+    "domains": {
+      "reverse_vertical": {
+        "path": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\routes\\reverse_vertical.rou.xml",
+        "probabilities": {
+          "flow_1": 0.06,
+          "flow_2": 0.06,
+          "flow_3": 0.16,
+          "flow_4": 0.16
+        },
+        "sha256": "eaea8f8fc9832d0b7832a59a759068898bcacdb816a5ec00991a7ef11e9d098b"
+      },
+      "target_horizontal": {
+        "path": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\routes\\target_horizontal.rou.xml",
+        "probabilities": {
+          "flow_1": 0.16,
+          "flow_2": 0.16,
+          "flow_3": 0.06,
+          "flow_4": 0.06
+        },
+        "sha256": "77105ba2a3f1f105bb3922b0693ae2bab7ada68659b8d0965df53cc0bef13c70"
+      }
+    },
+    "source": "D:\\TSO\\TSO-latest-BTP\\sumo_rl\\nets\\2x2grid\\2x2.rou.xml",
+    "source_sha256": "6f9593816d12dd0a747a357deb292cb48f1b7039184d18e8e8719539a52b70c1"
+  },
+  "run_name": "quick",
+  "source_checkpoint": "D:\\TSO\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\shared_dueling_ddqn_v1_final.pt",
+  "source_checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "target_route": "D:\\TSO\\TSO-latest-BTP\\sem-2\\08-transfer-learning\\routes\\target_horizontal.rou.xml",
+  "target_route_sha256": "77105ba2a3f1f105bb3922b0693ae2bab7ada68659b8d0965df53cc0bef13c70",
+  "training_complete": {
+    "fine_tuned": true,
+    "scratch": true
+  },
+  "validation_score_auc_lower_is_better": {
+    "fine_tuned": 145.91666666666666,
+    "scratch": 782.4916666666667
+  },
+  "validation_seeds": [
+    1291,
+    1292
+  ]
+}

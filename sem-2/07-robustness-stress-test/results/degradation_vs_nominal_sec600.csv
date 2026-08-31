@@ -1,0 +1,4 @@
+seed,method,scenario,degradation_pct__mean_system_total_waiting_time,degradation_pct__mean_system_total_stopped,degradation_pct__mean_system_mean_speed,degradation_pct__throughput_veh_per_hour
+1191,fixed,gaussian_noise,0.0,0.0,0.0,0.0
+1191,dqn_raw,gaussian_noise,-2.653111827423751,2.8192371475953553,1.839999171768122,0.4273504273504274
+1191,dqn_shielded,gaussian_noise,-7.364244978923883,-3.1509121061360017,-0.2585937449585894,1.282051282051282

@@ -1,0 +1,44 @@
+{
+  "checkpoint": "D:\\TSO\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\shared_dueling_ddqn_v1_final.pt",
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "command_line": [
+    "sem-2/07-robustness-stress-test/run_stress_test.py",
+    "--seconds",
+    "600",
+    "--seeds",
+    "1191",
+    "--scenarios",
+    "nominal",
+    "gaussian_noise",
+    "--device",
+    "cpu",
+    "--bootstrap-resamples",
+    "1000"
+  ],
+  "delay_decisions": 2,
+  "demand_scale": 1.4,
+  "device": "cpu",
+  "dropout_probability": 0.2,
+  "incident": {
+    "end": 1200,
+    "lane": "-h11_0",
+    "speed": 1.0,
+    "start": 600
+  },
+  "methods": [
+    "fixed",
+    "dqn_raw",
+    "dqn_shielded"
+  ],
+  "noise_std": 0.15,
+  "pressure_gap": 2.0,
+  "scenarios": [
+    "nominal",
+    "gaussian_noise"
+  ],
+  "seconds": 600,
+  "seeds": [
+    1191
+  ],
+  "status": "complete"
+}

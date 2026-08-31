@@ -1,0 +1,80 @@
+[
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\07-robustness-stress-test\\results\\episodes\\sec600\\dqn_raw__gaussian_noise__seed1191.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\07-robustness-stress-test\\results\\episodes\\sec600\\dqn_raw__nominal__seed1191.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\07-robustness-stress-test\\results\\episodes\\sec600\\dqn_shielded__gaussian_noise__seed1191.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\07-robustness-stress-test\\results\\episodes\\sec600\\dqn_shielded__nominal__seed1191.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\07-robustness-stress-test\\results\\episodes\\sec600\\fixed__gaussian_noise__seed1191.csv",
+    "passed": true
+  },
+  {
+    "checks": {
+      "arrived_monotonic": true,
+      "departed_monotonic": true,
+      "finite_metrics": true,
+      "nonempty": true,
+      "nonnegative_counts": true,
+      "required_columns": true,
+      "simulation_reached_horizon": true
+    },
+    "file": "D:\\TSO\\TSO-latest-BTP\\sem-2\\07-robustness-stress-test\\results\\episodes\\sec600\\fixed__nominal__seed1191.csv",
+    "passed": true
+  }
+]

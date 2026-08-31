@@ -1,0 +1,31 @@
+{
+  "checkpoint": "D:\\TSO\\TSO-latest-BTP\\sem-2\\05-multi-intersection\\checkpoints\\shared_dueling_ddqn_v1_final.pt",
+  "checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "command_line": [
+    "sem-2/06-component-ablation/run_ablation.py",
+    "--seconds",
+    "600",
+    "--seeds",
+    "1091",
+    "--device",
+    "cpu",
+    "--bootstrap-resamples",
+    "1000"
+  ],
+  "device": "cpu",
+  "methods": [
+    "fixed",
+    "full_dqn",
+    "raw_dqn",
+    "no_network_context",
+    "no_identity",
+    "no_pressure"
+  ],
+  "pressure_gap": 2.0,
+  "seconds": 600,
+  "seeds": [
+    1091
+  ],
+  "status": "complete",
+  "study_type": "post-training feature occlusion"
+}

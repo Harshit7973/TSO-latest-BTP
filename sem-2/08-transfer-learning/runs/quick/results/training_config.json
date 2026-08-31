@@ -1,0 +1,35 @@
+{
+  "batch_size": 128,
+  "beta_start": 0.4,
+  "coordination": 0.25,
+  "device": "cpu",
+  "episodes": 2,
+  "epsilon_decay_steps": 12000,
+  "epsilon_end": 0.01,
+  "epsilon_start": 0.1,
+  "gamma": 0.99,
+  "learning_rate": 0.0001,
+  "learning_start": 500,
+  "modes": [
+    "fine_tuned",
+    "scratch"
+  ],
+  "pressure_gap": 2.0,
+  "replay_alpha": 0.6,
+  "replay_capacity": 30000,
+  "reward_scale": 20.0,
+  "run_name": "quick",
+  "seconds": 600,
+  "seed": 1200,
+  "source_checkpoint_sha256": "b23826d00901aaa0cda41381e47d23f00a3790c2127e5a915ff953789d062e78",
+  "status": "complete",
+  "target_route_sha256": "77105ba2a3f1f105bb3922b0693ae2bab7ada68659b8d0965df53cc0bef13c70",
+  "target_update": 750,
+  "train_every": 1,
+  "validation_every": 1,
+  "validation_seconds": 600,
+  "validation_seeds": [
+    1291,
+    1292
+  ]
+}
